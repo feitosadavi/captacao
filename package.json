@@ -1,0 +1,46 @@
+{
+  "name": "captacao",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "bot:start": "nodemon --watch 'backend/' --exec \"ts-node-dev -r tsconfig-paths/register backend/server.ts\" -e ts",
+    "bot:dev": "nodemon --watch 'backend/' --exec \"ts-node-dev -r tsconfig-paths/register backend/olx/main.ts\" -e ts",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.29.2",
+    "@radix-ui/colors": "^0.1.8",
+    "@stitches/react": "^1.2.8",
+    "@tauri-apps/api": "^1.2.0",
+    "bufferutil": "^4.0.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http": "0.0.1-security",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.8.0",
+    "react-swipeable-views": "^0.14.0",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.2",
+    "utf-8-validate": "^6.0.1",
+    "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.2.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.7.10",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^3.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^4.0.0"
+  }
+}
