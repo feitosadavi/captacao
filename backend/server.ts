@@ -78,6 +78,6 @@ app.get('/ping', (req, res) => {
   });
 });
 
-httpServer.listen(1200, () => {
-  console.log(`Server listening on ${1200}`);
+httpServer.listen(5000, () => {
+  console.log(`Server listening on ${5000}`);
 });

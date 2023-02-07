@@ -1,4 +1,8 @@
 import * as React from 'react';
+import * as Progress from '@radix-ui/react-progress'
+
+import { styled } from '../config/stitches';
+import { blackA } from '@radix-ui/colors';
 // import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
 // import Typography from '@mui/material/Typography';
 // import Box from '@mui/material/Box';
@@ -25,20 +29,56 @@ import * as React from 'react';
 // }
 
 interface IProgressBarProps {
+  total: number
+  progress: number
   icon: string
-  progress: any
 }
 
-export const ProgressBar: React.FC<IProgressBarProps> = ({ progress, icon }) => {
+export const ProgressBar: React.FC<IProgressBarProps> = ({ total, progress, icon }) => {
 
   // React.useEffect(() => {
-  //   setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+  //   const timer = setTimeout(() => setProgress(66), 500);
+  //   return () => clearTimeout(timer);
   // }, []);
 
+
   return (
-    <div>progress bar</div>
-    // <Box sx={{ width: '100%' }}>
-    //   <LinearProgressWithLabel icon={icon} progress={progress} />
-    // </Box>
+    <Wrapper>
+      OLX
+      <ProgressRoot value={total}>
+        <ProgressIndicator style={{ transform: `translateX(-${total - progress}%)` }} />
+      </ProgressRoot>
+      <span>
+        {progress}/{total}
+      </span>
+    </Wrapper>
+
   );
 }
+
+const Wrapper = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  width: '100%',
+  gap: '$2'
+})
+
+const ProgressRoot = styled(Progress.Root, {
+  position: 'relative',
+  overflow: 'hidden',
+  background: blackA.blackA9,
+  borderRadius: '99999px',
+  width: '100%',
+  height: 10,
+
+  // Fix overflow clipping in Safari
+  // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
+  transform: 'translateZ(0)',
+});
+
+const ProgressIndicator = styled(Progress.Indicator, {
+  backgroundColor: 'white',
+  width: '100%',
+  height: '100%',
+  transition: 'transform 660ms cubic-bezier(0.65, 0, 0.35, 1)',
+})

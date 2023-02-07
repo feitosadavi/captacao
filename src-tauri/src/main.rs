@@ -37,7 +37,7 @@ fn stop() {
   thread::spawn(move || {
     Command::new("sh")
     .arg("-c")
-    .arg("kill -9 `lsof -t -i:1200`")
+    .arg("kill -2 `lsof -t -i:5000`")
     .output()
     .expect("failed to execute process");
   });

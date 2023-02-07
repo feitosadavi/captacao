@@ -13,6 +13,8 @@
   "dependencies": {
     "@playwright/test": "^1.29.2",
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-progress": "^1.0.1",
+    "@radix-ui/react-toast": "^1.1.2",
     "@stitches/react": "^1.2.8",
     "@tauri-apps/api": "^1.2.0",
     "bufferutil": "^4.0.7",

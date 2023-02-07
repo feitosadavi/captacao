@@ -20,22 +20,13 @@ async function main () {
 
   const allLinks: string[] = []
   let totalOfLinks = 0
+  parentPort?.postMessage({ totalOfLinks, links: allLinks })
   await postsGetter.start(query, (count, links) => {
     totalOfLinks = count
     allLinks.push(...links)
   })
   parentPort?.postMessage({ totalOfLinks, links: allLinks })
 
-  // parentPort?.on('message', async (msg) => {
-  //   if (msg === 'stop') await messengerPage.close()
-  // })
-
-  // const messenger = new Messenger(messengerPage)
-
-  // for (const link of links) {
-  //   await messenger.sendMessage(link)
-  //   parentPort?.postMessage(link)
-  // }
 }
 
 main()

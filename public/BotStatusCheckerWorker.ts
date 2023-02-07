@@ -1,9 +1,21 @@
 async function main () {
   console.log('BotStatusCheckerWorker')
+  // self.addEventListener('message', (event) => {
+  //   const workerData = event.data
+  //   postMessage('mensagme muito doida')
+  //   console.log(workerData);
+
+  // })
+  setInterval(async () => {
+    try {
+      await fetch('http://localhost:5000/ping')
+      postMessage(true)
+    } catch (error) {
+      postMessage(false)
+    }
+  }, 500)
   self.addEventListener('message', (event) => {
-    const workerData = event.data
-    postMessage('mensagme muito doida')
-    console.log(workerData);
+    console.log(event.data);
     
   })
   // setInterval(() => {
