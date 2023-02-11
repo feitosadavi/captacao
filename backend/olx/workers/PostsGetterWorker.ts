@@ -7,12 +7,8 @@ import { PostsGetter } from '../modules/PostsGetter';
 register()
 
 async function main () {
-  console.log('POSTS GETTER WORKER');
+  console.log('PostsGetterWorker');
   const { query } = workerData
-
-  // const messengerPage = (await initBrowser({ viewport: { width: 850 }, auth: true }))
-
-  // const postsGetter = new PostsGetter(messengerPage)
 
   const postsGetterPage = (await initBrowser())
 
@@ -20,12 +16,13 @@ async function main () {
 
   const allLinks: string[] = []
   let totalOfLinks = 0
-  parentPort?.postMessage({ totalOfLinks, links: allLinks })
+  parentPort?.postMessage({ totalOfLinks: allLinks.length, links: allLinks })
+
   await postsGetter.start(query, (count, links) => {
     totalOfLinks = count
     allLinks.push(...links)
   })
-  parentPort?.postMessage({ totalOfLinks, links: allLinks })
+  parentPort?.postMessage({ totalOfLinks: allLinks.length, links: allLinks })
 
 }
 

@@ -3,6 +3,7 @@ import { register } from 'ts-node';
 import { parentPort, workerData } from 'node:worker_threads';
 import { initBrowser } from 'backend/config/context';
 import { Page } from '@playwright/test';
+import { StackMessageType } from 'backend/domain/logger.protocols';
 register()
 // import { createMessenger } from '../modules/Messenger';
 
@@ -21,15 +22,21 @@ async function main () {
   const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
   const messenger = new Messenger(messengerPage)
   for (const [index, link] of links.entries()) {
-    await messenger.sendMessage(link, index === 0)
-    parentPort?.postMessage({
-      type: 'log',
-      content: {
+    try {      
+      await messenger.sendMessage(link, index === 0)
+
+      const msgContent: StackMessageType = {
         type: 'info',
         label: 'olx',
-        description: 'link'
+        description: link
       }
-    })
+
+      parentPort?.postMessage({ type: 'stack', content: msgContent })
+    } catch (error) {
+      console.error(error);
+    } finally {
+      parentPort?.postMessage({ type: 'progress', content: { current: index + 1 } })
+    }
   }
   await messengerPage.close()
 
@@ -47,26 +54,28 @@ class Messenger {
   constructor(private readonly page?: Page) { }
 
   async sendMessage (postUrl: string, clickChatBtn?: boolean) {
-    await this.page?.goto(postUrl, { waitUntil: 'commit' })
 
-    if (clickChatBtn) await this.clickChatBtn()
+    await this.page?.goto(postUrl, { waitUntil: 'domcontentloaded' })
 
-    await this.clickChatBtn()
+    if (clickChatBtn) {
+      await this.clickCookiesBtn()
+    } else {
+      await this.clickChatBtn()
 
-    const hasSentPreviousMessages = await this.hasSentPreviousMessages()
+      const hasSentPreviousMessages = await this.hasSentPreviousMessages()
 
-    if (!hasSentPreviousMessages) {
-      await this.typeMessage()
-      const element = await this.page?.$('[aria-label="Enviar mensagem"]')
+      if (!hasSentPreviousMessages) {
+        await this.typeMessage()
+        const element = await this.page?.$('[aria-label="Enviar mensagem"]')
 
-      // await element?.click()
-      console.log('MENSAGEM ENVIADA!');
+        // await element?.click()
+        console.log('MENSAGEM ENVIADA!');
+      }
     }
-
   }
 
   async clickCookiesBtn () {
-    await delay(1000)
+    await delay(1200)
     const cookie = await this.page?.$('#cookie-notice-ok-button')
     console.log({ cookie: cookie && 'tem cookie' });
 
@@ -74,6 +83,7 @@ class Messenger {
   }
 
   private async clickChatBtn () {
+    this.page?.waitForSelector('[data-element="button_reply-chat"]')
     const chatBtn = this.page?.locator('[data-element="button_reply-chat"]')
 
     // const chatBtn = await this.page?.$('.ad__sc-1wfs6j-0.jdKaWZ') as unknown as any[]

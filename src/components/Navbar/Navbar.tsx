@@ -6,6 +6,7 @@ import * as S from './Navbar.styles'
 
 import { OlxLogo } from '../OlxLogo'
 import { BsSearch as BsSearchIcon } from 'react-icons/bs'
+import { useHref } from 'react-router-dom'
 
 type NavItems = {
   thumb: any
@@ -15,18 +16,22 @@ type NavItems = {
 const navItems: NavItems[] = [{
   thumb: <BsSearchIcon color='white' />,
   path: '/search'
-}, {
-  thumb: 'Olx',
-  path: '/olx'
 }]
 
-
 export const Navbar: React.FC = () => {
+  // const navigation = useHref(path)
+
+
+  const handleClick = () => {
+
+  }
+
+
   return (
     <S.Wrapper>
       {
         navItems.map(({ thumb, path }) => (
-          <S.NavLink key={path} to={path}>
+          <S.NavLink key={path} onClick={() => useHref(path)}>
             {thumb}
           </S.NavLink>
         ))

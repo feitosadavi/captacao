@@ -9,7 +9,8 @@ import {
   violet,
   blackA,
   whiteA,
-  slate
+  slate,
+  orange
 } from '@radix-ui/colors';
 
 import { createStitches } from '@stitches/react';
@@ -41,7 +42,8 @@ export const {
       ...violet,
       ...blackA,
       ...whiteA,
-      ...slate
+      ...slate,
+      ...orange
 
     },
     radii: {

@@ -35,7 +35,6 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
         eventManager.emit('log', {
           type: 'progress',
           content: {
-            current: 0,
             total: totalOfLinks
           }
         })

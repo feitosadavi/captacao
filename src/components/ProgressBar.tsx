@@ -46,7 +46,7 @@ export const ProgressBar: React.FC<IProgressBarProps> = ({ total, progress, icon
     <Wrapper>
       OLX
       <ProgressRoot value={total}>
-        <ProgressIndicator style={{ transform: `translateX(-${total - progress}%)` }} />
+        <ProgressIndicator variant={total === progress ? 'complete' : 'incomplete'} style={{ transform: `translateX(-${total - progress}%)` }} />
       </ProgressRoot>
       <span>
         {progress}/{total}
@@ -77,8 +77,18 @@ const ProgressRoot = styled(Progress.Root, {
 });
 
 const ProgressIndicator = styled(Progress.Indicator, {
-  backgroundColor: 'white',
   width: '100%',
   height: '100%',
   transition: 'transform 660ms cubic-bezier(0.65, 0, 0.35, 1)',
+
+  variants: {
+    variant: {
+      incomplete: {
+        backgroundColor: '$blue10',
+      },
+      complete: {
+        backgroundColor: '$green10',
+      },
+    }
+  }
 })

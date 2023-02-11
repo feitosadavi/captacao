@@ -10,14 +10,14 @@ export const Wrapper = styled('div', {
   gap: '$2',
 
   width: '30px',
-  height: '95%',
+  height: '100%',
   padding: '$1',
   marginLeft: '5px',
   borderRadius: '$1',
   background: '$mauve3',
 })
 
-export const NavLink = styled(Link, {
+export const NavLink = styled('a', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

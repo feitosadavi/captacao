@@ -4,7 +4,6 @@ import express from 'express'
 import http from 'http'
 
 import { runWorkerSync } from './helpers/runWorkerSync';
-import EventEmitter from 'events';
 
 const app = express();
 
@@ -16,51 +15,25 @@ export const io = new Server(httpServer, {
   }
 })
 
-// class Logger implements ILogger {
-//   constructor(private readonly socket: Socket) { }
-
-//   async emit (channel: string, message?: LogMessageType | ProgressMessageType): Promise<void> {
-//     this.socket.emit(channel, message)
-//   }
-//   async on (channel: string, cb: any): Promise<void> {
-//     this.socket.on(channel, cb)
-//   }
-// }
-
-const eventManager = new EventEmitter()
+let isBusy = false
 
 io.on('connection', (socket) => {
-  // const logger = new Logger(socket)
-  // const masterOfBots = createBot({
-  //   eventManager: logger,
-  //   target: 'olx'
-  // })
-  // const olxBot = createBot(async (logMsg) => {
-  //   socket.emit('log', logMsg)
-  // },
-  //   { target: 'olx' }
-  // )
-  socket.on('search', async (search) => {
-    // olxBot.run(search)
-    console.log({ search });
+  socket.on('search', async (query) => {
+    console.log({ query });
 
     try {
+      isBusy = true
       runWorkerSync({
         target: 'olx',
         name: 'MainWorker',
-        data: { query: search, eventManager },
-        onMessage: async (logMsg) => { socket.emit('log', logMsg) },
-        eventManager
+        data: { query },
+        onMessage (logMsg) { socket.emit('log', logMsg) },
+        onExit () { isBusy = false }
       })
     } catch (error) {
       console.error(error);
 
     }
-  })
-
-
-  socket.on('stop_io', () => {
-    eventManager.emit('stop')
   })
 })
 
@@ -76,6 +49,18 @@ app.get('/ping', (req, res) => {
   res.json({
     message: 'pong',
   });
+});
+
+app.get('/is-busy', (req, res) => {
+  res.json({
+    isBusy,
+  });
+});
+
+app.get('/is-not-busy', (req, res) => {
+  isBusy = false
+  console.log({ isBusy });
+
 });
 
 httpServer.listen(5000, () => {
