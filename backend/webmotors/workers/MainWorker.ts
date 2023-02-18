@@ -1,6 +1,6 @@
+import { createBot } from 'backend/olx/main';
 import { register } from 'ts-node';
-import { parentPort, workerData } from 'node:worker_threads';
-import { createBot } from '../main';
+import { parentPort, workerData } from 'worker_threads';
 
 register()
 

@@ -12,7 +12,7 @@ interface IRunWorkerInput {
   onExit?: () => Promise<void> | void
 }
 
-export const runWorkerSync = async ({ name, target, data, onMessage, onExit }: IRunWorkerInput): Promise<any> => {
+export const runWorkerSync = ({ name, target, data, onMessage, onExit }: IRunWorkerInput): any => {
 
   const worker = new Worker(path.resolve(__dirname, `../${target}/workers/${name}.ts`), {
     workerData: { ...data, target }

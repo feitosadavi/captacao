@@ -22,15 +22,15 @@ export class PostsGetter {
   }
 
   async start (query: string, cb: (totalOfLinks: number, links: string[]) => unknown): Promise<void> {
-    const BASE_PATH = 'https://df.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios?f=p&q='
+    const BASE_PATH = 'https://df.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios'
 
     try {
-      await this.page.goto(`${BASE_PATH}${query}`, { waitUntil: 'domcontentloaded' })
+      await this.page.goto(query, { waitUntil: 'domcontentloaded' })
 
       const { totalOfLinks, numberOfPages } = await this.getNumberOfPages()
 
       for (let i = 0; i < numberOfPages + 1; i++) {
-        await this.page.goto(`${BASE_PATH}${query}&o=${i}`, { waitUntil: 'domcontentloaded' })
+        await this.page.goto(`${query}&o=${i}`, { waitUntil: 'domcontentloaded' })
         const posts = await this.getOnePagePosts()
 
         cb(totalOfLinks, posts)

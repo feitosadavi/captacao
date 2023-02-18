@@ -20,7 +20,14 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
       target,
       data: { links },
       eventManager,
-      onMessage: (logMsg) => { eventManager.emit(`log`, logMsg) },
+      onMessage: ({ type, content }) => {
+        const msg: LogMessageType = {
+          target,
+          type,
+          content
+        }
+        eventManager.emit(`log`, msg)
+      },
     })
   })
 
@@ -32,12 +39,15 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
       data: { query },
       eventManager,
       onMessage: ({ totalOfLinks, links }) => {
-        eventManager.emit('log', {
+        const msg: LogMessageType = {
           type: 'progress',
+          target,
           content: {
+            current: 0,
             total: totalOfLinks
           }
-        })
+        }
+        eventManager.emit('log', msg)
         eventManager.emit('post_links', links)
       },
     })

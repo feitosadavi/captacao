@@ -9,7 +9,10 @@ export type ProgressMessageType = {
   total: number
 }
 
+type Target = 'olx' | 'webmotors' | 'icarros'
+
 export type LogMessageType = {
+  target: Target
   type: 'progress' | 'stack',
   content: ProgressMessageType | StackMessageType
 }

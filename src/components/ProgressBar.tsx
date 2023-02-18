@@ -3,30 +3,6 @@ import * as Progress from '@radix-ui/react-progress'
 
 import { styled } from '../config/stitches';
 import { blackA } from '@radix-ui/colors';
-// import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
-// import Typography from '@mui/material/Typography';
-// import Box from '@mui/material/Box';
-// import { ProgressMessageType } from '../../backend/bots/olx/main';
-// import Image from 'next/image';
-
-
-
-// const LinearProgressWithLabel: React.FC<IProgressBarProps> = ({ icon, progress: { current, total } }) => {
-//   return (
-//     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-//       <Image src={`/${icon}-logo.png`} width='25' height='13' alt={`${icon} logo`} />
-
-//       <Box sx={{ width: '100%', mx: 1 }}>
-//         <LinearProgress value={(current / total) * 100} variant="determinate" />
-//       </Box>
-//       <Box sx={{ minWidth: 35 }}>
-//         <Typography variant="body2" color="text.secondary">
-//           {`${current}/${total}`}
-//         </Typography>
-//       </Box>
-//     </Box>
-//   );
-// }
 
 interface IProgressBarProps {
   total: number
@@ -44,7 +20,7 @@ export const ProgressBar: React.FC<IProgressBarProps> = ({ total, progress, icon
 
   return (
     <Wrapper>
-      OLX
+      <img src={`/${icon}-logo.png`} width='20' height='20' alt={`${icon} logo`} />
       <ProgressRoot value={total}>
         <ProgressIndicator variant={total === progress ? 'complete' : 'incomplete'} style={{ transform: `translateX(-${total - progress}%)` }} />
       </ProgressRoot>
@@ -84,10 +60,10 @@ const ProgressIndicator = styled(Progress.Indicator, {
   variants: {
     variant: {
       incomplete: {
-        backgroundColor: '$blue10',
+        // backgroundColor: '$blue10',
       },
       complete: {
-        backgroundColor: '$green10',
+        // backgroundColor: '$green10',
       },
     }
   }

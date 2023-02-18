@@ -4,6 +4,7 @@ import express from 'express'
 import http from 'http'
 
 import { runWorkerSync } from './helpers/runWorkerSync';
+import { parseQuery } from './helpers/query-parser';
 
 const app = express();
 
@@ -18,18 +19,19 @@ export const io = new Server(httpServer, {
 let isBusy = false
 
 io.on('connection', (socket) => {
-  socket.on('search', async (query) => {
-    console.log({ query });
+  socket.on('search', async ({ query, targets }) => {
+    const queries = parseQuery(query, targets)
 
     try {
       isBusy = true
-      runWorkerSync({
-        target: 'olx',
-        name: 'MainWorker',
-        data: { query },
-        onMessage (logMsg) { socket.emit('log', logMsg) },
-        onExit () { isBusy = false }
-      })
+      queries.forEach(({ target, content }) => {
+        runWorkerSync({
+          target,
+          name: 'MainWorker',
+          data: { query: content },
+          onMessage (logMsg) { socket.emit('log', logMsg) },
+        })
+      });
     } catch (error) {
       console.error(error);
 
@@ -59,8 +61,6 @@ app.get('/is-busy', (req, res) => {
 
 app.get('/is-not-busy', (req, res) => {
   isBusy = false
-  console.log({ isBusy });
-
 });
 
 httpServer.listen(5000, () => {

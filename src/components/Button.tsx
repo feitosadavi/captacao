@@ -37,6 +37,14 @@ const ButtonStyles = styled('button', {
 
   variants: {
     variant: {
+      default: {
+        backgroundColor: '$mauve6',
+        color: 'white',
+        boxShadow: `0 2px 10px $blackA7`,
+        '&:hover': { backgroundColor: '$mauve3' },
+        '&:focus': { boxShadow: `0 0 0 2px black` },
+
+      },
       violet: {
         // backgroundColor: 'white',
         color: '$orange11',
@@ -53,6 +61,6 @@ const ButtonStyles = styled('button', {
   },
 
   defaultVariants: {
-    variant: 'violet',
+    variant: 'default',
   },
 });
