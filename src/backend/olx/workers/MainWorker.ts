@@ -1,22 +1,25 @@
 import { register } from 'ts-node';
 import { parentPort, workerData } from 'node:worker_threads';
 import { createBot } from '../main';
+import { runWorkerSync } from '@/backend/helpers/runWorkerSync';
+import { LogMessageType } from '@/backend/domain/logger.protocols';
 
 register()
 
 async function main () {
-  console.log('MainWorker');
-
   const { query, target } = workerData
+  console.log({ query, target });
+
+  console.log(`${target} - MainWorker`);
 
 
-  const olxBot = createBot((logMsg) => {
+  const bot = createBot((logMsg) => {
     parentPort?.postMessage(logMsg)
   },
     { target }
   )
 
-  olxBot.run(query)
+  bot.run(query)
 }
 
 main()

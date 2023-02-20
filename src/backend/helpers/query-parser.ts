@@ -1,5 +1,5 @@
 import { TargetKeys } from '@/types';
-import { ExternalQuery } from 'backend/domain/external-query';
+import { ExternalQuery } from '@/backend/domain/external-query';
 
 interface QueryParserFunction {
   (externalQuery: ExternalQuery): string

@@ -6,19 +6,23 @@ import { PostsGetterService } from '../modules/PostsGetterService.webmotors';
 register()
 
 async function main () {
-  console.log('WEBMOTORS - PostsGetterWorker');
   const { query } = workerData
+
+  console.log('WEBMOTORS - PostsGetterWorker');
+
+  console.log({ query });
+
 
   const postsGetter = new PostsGetterService()
 
-  // parentPort?.postMessage({ totalOfLinks: allLinks.length, links: allLinks })
+  // // parentPort?.postMessage({ totalOfLinks: allLinks.length, links: allLinks })
 
   const res = await postsGetter.start(query)
 
-  console.log({ res });
+  // // console.log({ res });
 
 
-  parentPort?.postMessage(res)
+  // parentPort?.postMessage(['https://www.webmotors.com.br/carros/DF/Fiat/Uno'])
 
 }
 

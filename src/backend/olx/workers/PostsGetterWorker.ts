@@ -1,4 +1,4 @@
-import { initBrowser } from 'backend/config/context';
+import { initBrowser } from '@/backend/config/context';
 import { parentPort, workerData } from 'node:worker_threads';
 import { register } from 'ts-node';
 import { PostsGetter } from '../modules/PostsGetter';

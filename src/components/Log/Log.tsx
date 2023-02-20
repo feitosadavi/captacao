@@ -12,7 +12,8 @@ interface ILogProps {
   logMessages: ConsoleMessage[],
   setLogMessages: React.Dispatch<React.SetStateAction<ConsoleMessage[]>>
   targets: NewTarget[]
-  handleTargetChange: (selectedTargets: TargetKeys[]) => void
+  // handleTargetChange: (selectedTargets: TargetKeys[]) => void
+  handleTargetChange: (selectedTargets: TargetKeys) => void
 }
 
 export const Log: React.FC<ILogProps> = ({
@@ -47,7 +48,7 @@ export const Log: React.FC<ILogProps> = ({
 
         <ToggleGroup
           items={targets.map(target => target.name)}
-          selected={targets.filter(target => target.selected).map(target => target.name)}
+          selected={targets.filter(target => target.selected)[0].name}
           onChange={handleTargetChange}
         />
       </S.ToolBar>

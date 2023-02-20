@@ -87,8 +87,11 @@ export const S = {
     },
     variants: {
       status: {
-        online: { color: 'green' },
-        offline: { color: 'red' },
+        online: { color: '#38db06' },
+        offline: { color: '#e00d0d' },
+        busy: {
+          color: '#094bda'
+        }
       }
     }
   })

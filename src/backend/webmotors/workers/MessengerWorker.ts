@@ -1,9 +1,9 @@
 import { register } from 'ts-node';
 
 import { parentPort, workerData } from 'node:worker_threads';
-import { initBrowser } from 'backend/config/context';
+import { initBrowser } from '@/backend/config/context';
 import { Page } from '@playwright/test';
-import { StackMessageType } from 'backend/domain/logger.protocols';
+import { StackMessageType } from '@/backend/domain/logger.protocols';
 register()
 // import { createMessenger } from '../modules/Messenger';
 
@@ -15,19 +15,21 @@ async function delay (ms: number): Promise<any> {
 
 
 async function main () {
-  console.log('MESSENGERWORKER');
+  console.log('Webmotors - MessengerWorker');
 
   const { links } = workerData
+
+  console.log(links)
 
   const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
   const messenger = new Messenger(messengerPage)
   for (const [index, link] of links.entries()) {
-    try {      
+    try {
       await messenger.sendMessage(link, index === 0)
 
       const msgContent: StackMessageType = {
         type: 'info',
-        label: 'olx',
+        label: 'webmotors',
         description: link
       }
 
@@ -38,12 +40,6 @@ async function main () {
       parentPort?.postMessage({ type: 'progress', content: { current: index + 1 } })
     }
   }
-  await messengerPage.close()
-
-  // await messenger.sendMessage(links[0])
-  // parentPort?.postMessage('finish')
-  parentPort?.postMessage({ type: 'status', content: 'finished' })
-
 }
 
 main()

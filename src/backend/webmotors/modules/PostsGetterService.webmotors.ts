@@ -33,26 +33,31 @@ type Result = {
 
 export class PostsGetterService {
   async start (queryUrl: string) {
-    const links = []
+    try {
+      const links = []
 
-    const URL = `${WEBMOTORS_API_BASE_PATH}${queryUrl}`
-    console.log(URL + '?showCount=true')
-    const { Count, SearchResults } = (await axios.get(`${URL}&showCount=true`, HEADERS)).data as Result
+      const URL = `${WEBMOTORS_API_BASE_PATH}${queryUrl}`
+      console.log(URL + '?showCount=true')
+      const { Count, SearchResults } = (await axios.get(`${URL}&showCount=true`, HEADERS)).data as Result
 
-    const newLinks = SearchResults.map(result => this.buildPostUrl(result))
-    links.push(...newLinks)
-
-    const numberOfRequests = this.countNumberOfRequests(Count, SearchResults.length)
-
-    console.log({ numberOfRequests });
-
-    for (let i = 1; i < numberOfRequests; i++) {
-      const { SearchResults } = (await axios.get(`${URL}&actualPage${i + 1}`, HEADERS)).data as Result
       const newLinks = SearchResults.map(result => this.buildPostUrl(result))
       links.push(...newLinks)
-    }
 
-    return { totalOfLinks: Count, links }
+      const numberOfRequests = this.countNumberOfRequests(Count, SearchResults.length)
+
+      console.log({ numberOfRequests });
+
+      for (let i = 1; i < numberOfRequests; i++) {
+        const { SearchResults } = (await axios.get(`${URL}&actualPage${i + 1}`, HEADERS)).data as Result
+        const newLinks = SearchResults.map(result => this.buildPostUrl(result))
+        links.push(...newLinks)
+      }
+
+      return { totalOfLinks: Count, links } 
+    } catch (error) {
+      console.log('WEBMOTORS - TEVE UM ERRO NO START DO POSTS GETTER WORKER');
+
+    }
   }
 
   buildPostUrl ({ UniqueId, Specification: { Version, Make, Model, NumberPorts, YearFabrication } }: SearchResult) {

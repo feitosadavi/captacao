@@ -4,12 +4,14 @@ import { Socket } from 'socket.io';
 import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 import { invoke } from "@tauri-apps/api/tauri";
 
-import { LogMessageType, ProgressMessageType, StackMessageType } from 'backend/domain/logger.protocols';
+import { LogMessageType, ProgressMessageType, StackMessageType } from '@/backend/domain/logger.protocols';
 
 import { runWebWorkerSync } from '../workers/runWebWorkerSync';
 import { SearchBar, ProgressBar, Log, BotStatusManager, Modal } from '../components'
 import * as S from './search.styles'
 import { ConsoleMessage, Progress, Target, TargetKeys, TargetOptions } from '../types';
+import { Messenger } from './messenger';
+import { initBrowser } from '../backend/config/context';
 
 export type BotStatus = 'online' | 'offline' | 'busy'
 
@@ -18,7 +20,7 @@ export type NewTarget = TargetOptions & { name: TargetKeys }
 const initialTargets: NewTarget[] = [{
   name: 'olx',
   progress: { current: 0, total: 0 },
-  selected: false
+  selected: true
 }, {
   name: 'webmotors',
   progress: { current: 0, total: 0 },
@@ -31,7 +33,8 @@ const initialTargets: NewTarget[] = [{
 
 type Action = {
   type: 'TOGGLE_SELECTED' | 'CHANGE_PROGRESS',
-  selectedTargets?: TargetKeys[],
+  // selectedTargets?: TargetKeys[],
+  selectedTargets?: TargetKeys,
   progress?: Progress
 }
 
@@ -39,7 +42,8 @@ const reducer: React.Reducer<NewTarget[], Action> = (state, { type, selectedTarg
   switch (type) {
     case 'TOGGLE_SELECTED':
       return state.map(target => {
-        target.selected = selectedTargets?.includes(target.name) ?? false
+        // target.selected = selectedTargets?.includes(target.name) ?? false
+        target.selected = selectedTargets === target.name
         return target
       })
     case 'CHANGE_PROGRESS':
@@ -96,7 +100,6 @@ export default function () {
     if (isFirstMount.current) {
       runWebWorkerSync({
         name: 'BotStatusCheckerWorker',
-        data: { query: searchParams },
         onMessage (logMsg) {
           setBotStatus(logMsg)
         }
@@ -125,7 +128,7 @@ export default function () {
       if (type === 'progress') {
         const { current, total } = content as ProgressMessageType
         const progress = { current, total }
-        dispatchTargets({ type: 'CHANGE_PROGRESS', progress, selectedTargets: [target] })
+        dispatchTargets({ type: 'CHANGE_PROGRESS', progress, selectedTargets: target })
       } else if (type === 'stack') {
         setLogMessages(prevState => ([...prevState, { ...content, targetName: target } as ConsoleMessage]))
       }
@@ -150,22 +153,26 @@ export default function () {
   //   setSearchParams(e.currentTarget.value)
   // }
 
-  function handleSearchSubmit () {
-    console.log('SUBMIT');
+  async function handleSearchSubmit () {
+    const link = 'https://pe.olx.com.br/grande-recife/autos-e-pecas/carros-vans-e-utilitarios/bmw-z4-m-sport-2-0-sdrive30i-gasolina-2021-5-000km-novissima-1142012308?rec=u&lis=galeria_home_olx_premium'
 
-    if (botStatus === 'online') {
-      console.log('SENT');
+    const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
 
-      const progress = { current: 0, total: 0 }
-      const selectedTargets = targets.map(target => target.name)
-      dispatchTargets({ type: 'CHANGE_PROGRESS', selectedTargets, progress })
-      socket?.emit('search', { query: searchParams, targets: targets.filter(target => target.selected).map(target => target.name) })
-    } else {
-      setError('O bot está offline, clique no botão para ligá-lo e tente novamente!')
-    }
+    const messenger = new Messenger(messengerPage)
+    messenger.sendMessage(link, true)
+    // if (botStatus === 'online') {
+    //   console.log('SENT');
+
+    //   const progress = { current: 0, total: 0 }
+    //   // const selectedTargets = targets.filter(target => target.selected).map(target => target.name)[0]
+    //   // dispatchTargets({ type: 'CHANGE_PROGRESS', selectedTargets, progress })
+    //   socket?.emit('search', { query: searchParams, targets: targets.filter(target => target.selected).map(target => target.name) })
+    // } else {
+    //   setError('O bot está offline, clique no botão para ligá-lo e tente novamente!')
+    // }
   }
 
-  function handleTargetChange (selectedTargets: TargetKeys[]) {
+  function handleTargetChange (selectedTargets: TargetKeys) {
     dispatchTargets({ type: 'TOGGLE_SELECTED', selectedTargets })
   }
 

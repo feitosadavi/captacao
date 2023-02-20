@@ -10,13 +10,15 @@ type Item = {
 
 interface ToogleGroupProps {
   items: string[]
-  selected: string[]
-  onChange: (value: any[]) => void
+  selected: string
+  // onChange: (value: any[]) => void
+  onChange: (value: any) => void
 }
 
 export const ToggleGroup: React.FC<ToogleGroupProps> = ({ items, selected, onChange }) => (
   <ToggleGroupRoot
-    type='multiple'
+    // type='multple'
+    type='single'
     defaultValue={selected}
     aria-label="Text"
     onValueChange={onChange}

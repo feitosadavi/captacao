@@ -20,9 +20,9 @@ let isBusy = false
 
 io.on('connection', (socket) => {
   socket.on('search', async ({ query, targets }) => {
-    const queries = parseQuery(query, targets)
 
     try {
+      const queries = parseQuery(query, targets)
       isBusy = true
       queries.forEach(({ target, content }) => {
         runWorkerSync({

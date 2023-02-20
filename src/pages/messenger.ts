@@ -1,56 +1,6 @@
-import { register } from 'ts-node';
+import { Page } from '@playwright/test'
 
-import { parentPort, workerData } from 'node:worker_threads';
-import { initBrowser } from 'backend/config/context';
-import { Page } from '@playwright/test';
-import { StackMessageType } from 'backend/domain/logger.protocols';
-register()
-// import { createMessenger } from '../modules/Messenger';
-
-// we need this so that we can use typescript with thread workers
-
-async function delay (ms: number): Promise<any> {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-
-async function main () {
-  console.log('Webmotors - MessengerWorker');
-
-  const { links } = workerData
-
-  console.log('link')
-
-  // const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
-  // const messenger = new Messenger(messengerPage)
-  for (const [index, link] of links.entries()) {
-    try {
-      // await messenger.sendMessage(link, index === 0)
-
-      const msgContent: StackMessageType = {
-        type: 'info',
-        label: 'webmotors',
-        description: link
-      }
-
-      parentPort?.postMessage({ type: 'stack', content: msgContent })
-    } catch (error) {
-      console.error(error);
-    } finally {
-      parentPort?.postMessage({ type: 'progress', content: { current: index + 1 } })
-    }
-  }
-  // await messengerPage.close()
-
-  // await messenger.sendMessage(links[0])
-  // parentPort?.postMessage('finish')
-  parentPort?.postMessage({ type: 'status', content: 'finished' })
-
-}
-
-main()
-
-class Messenger {
+export class Messenger {
   msg: string = 'lorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenloren'
 
   constructor(private readonly page?: Page) { }
@@ -77,7 +27,7 @@ class Messenger {
   }
 
   async clickCookiesBtn () {
-    await delay(1200)
+    // await delay(1200)
     const cookie = await this.page?.$('#cookie-notice-ok-button')
     console.log({ cookie: cookie && 'tem cookie' });
 

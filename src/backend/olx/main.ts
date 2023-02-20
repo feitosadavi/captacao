@@ -1,7 +1,7 @@
 import {
   ILogger, LogMessageType,
-} from 'backend/domain/logger.protocols';
-import { runWorkerSync } from 'backend/helpers/runWorkerSync';
+} from '@/backend/domain/logger.protocols';
+import { runWorkerSync } from '@/backend/helpers/runWorkerSync';
 import EventEmitter from 'node:events';
 
 type RunBotInput = {
@@ -33,6 +33,15 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
 
 
   function run (query: string): void {
+    eventManager.emit('log', {
+      type: 'stack',
+      target,
+      content: {
+        type: 'info',
+        description: 'Coletando Dados',
+      }
+    } as LogMessageType)
+
     runWorkerSync({
       name: 'PostsGetterWorker',
       target,
@@ -53,9 +62,6 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
     })
   }
 
-  function stop () {
-    eventManager.emit(`${target}-worker_event`, 'stop')
-  }
 
-  return { run, stop }
+  return { run }
 }
