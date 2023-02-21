@@ -1,0 +1,649 @@
+{
+  "cookies": [
+    {
+      "name": "r_id",
+      "value": "bc6c2849-2d60-47cc-8581-9d73b7d50609",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709670006.644132,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "nl_id",
+      "value": "98a600da-66a8-48a4-81e7-3562394aafc2",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709670009.009666,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "l_id",
+      "value": "e2da8472-5b1c-4897-b860-0301ffa8ec20",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709598610.8244,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fp_id",
+      "value": "WEB:035fe53d98d4f5156c5774c4055b66d4",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675643412,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "session_id",
+      "value": "WEB:035fe53d98d4f5156c5774c4055b66d4",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675643412,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "u",
+      "value": "fwAAAWPXD5Q4KgbQNdhpAgB=",
+      "domain": ".t.tailtarget.com",
+      "path": "/",
+      "expires": 1706574612.362221,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ssc",
+      "value": "y",
+      "domain": ".t.tailtarget.com",
+      "path": "/",
+      "expires": 1675211414.056693,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "G_ENABLED_IDPS",
+      "value": "google",
+      "domain": ".conta.olx.com.br",
+      "path": "/",
+      "expires": 1709598612.920909,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.3.1931513146.1675038613",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675196408,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "tt.u",
+      "value": "0100007F940FD763D0062A380269D835",
+      "domain": "conta.olx.com.br",
+      "path": "/",
+      "expires": 1706574615,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ttbprf",
+      "value": "____1675038613510_2974467862",
+      "domain": ".t.tailtarget.com",
+      "path": "/",
+      "expires": 1677630613.537679,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ttnprf",
+      "value": "",
+      "domain": ".t.tailtarget.com",
+      "path": "/",
+      "expires": 1677630613.537772,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "tt.nprf",
+      "value": "",
+      "domain": "conta.olx.com.br",
+      "path": "/",
+      "expires": 1675125013,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "n",
+      "value": "1675038614",
+      "domain": ".t.tailtarget.com",
+      "path": "/",
+      "expires": 1677630614.056653,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ACC_LL",
+      "value": "0|Y2FwaXRhbHZlaWN1bG9zMDdAZ21haWwuY29t",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709598614.359044,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "loginIdentifier",
+      "value": "M2I5YzBjOWY3MDNiMWQ3YWEwZWQzMzE2NzA4N2U4Mjk6NzQ3OGNlMGViNTc4MTMwZjI2OGFjZjcxZWRlNmNlZTNhNDI5ZDk0N2E0ZGZlYzRiMzZkOTI5NGQzMjAwZWJhZGUxYWVmM2ZlMTc0MmEwM2Q0OTJjOGVmYzY5OTgwN2Q0Nzk5NWM1NTYzYzQ2NGM4Njg4YjVhMmUwNDM4N2ExM2Q4ZjcyYTUxNTQ2YWY5ZjgyZDE3ZGNiNDFmMjMzMDU3YjQ4NDQ3ZmQ5MDYwNTJhODEwYTRjNGNiNjc1ODM5ZTljYTRhYjdkZDE2ZTM4YTQzYjEzMzdkYWMyOWQ5Yzk3ZjliNzFhOTYyNjcxOGMxMWM4YjdjNjU5MmJiYmU2ZDEwYjU3ZjQwMzU5ZjhkMzFjMmUxYTI2Zjk3ZWVlZDczN2Fm",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709598614.359103,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SMART_LOCK_STATUS",
+      "value": "on",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1677630614,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ttuu.s",
+      "value": "1675038615204",
+      "domain": "conta.olx.com.br",
+      "path": "/",
+      "expires": 1709598615.206827,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_hjSessionUser_736533",
+      "value": "eyJpZCI6ImE2Yjc5NTJhLTdhMzYtNWNhNy1iNzJmLWQ3ZTFlNDljMTBmNiIsImNyZWF0ZWQiOjE2NzUwMzg2MTIyMjAsImV4aXN0aW5nIjp0cnVlfQ==",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1706646008,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "x-olxbr-active-profile",
+      "value": "false",
+      "domain": "conta.olx.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__gads",
+      "value": "ID=20a3d787cfaac7f2:T=1675038623:S=ALNI_MbAPMRFrNnvqTCr6Y87-fHAISX-jw",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1708734623,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "anj",
+      "value": "dTM7k!M41.D>6NRF']wIg2E>8mnBF7!]tbPl1M>e)ZlrFUfJ+tGXxoTUzh9<?sU:'SI$RA<^3UtM[Fm+Q<:#*KRU2'3If)y3KL9D3I?+<MQR]z",
+      "domain": ".adnxs.com",
+      "path": "/",
+      "expires": 1682814625.209041,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "uuid2",
+      "value": "8229555735876668989",
+      "domain": ".adnxs.com",
+      "path": "/",
+      "expires": 1682814625.209106,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "CMID",
+      "value": "Y9cPoF2Kqo8-NUh7VbQt6AAA",
+      "domain": ".casalemedia.com",
+      "path": "/",
+      "expires": 1706574625.355953,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "CMPS",
+      "value": "357",
+      "domain": ".casalemedia.com",
+      "path": "/",
+      "expires": 1682814625.356012,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "CMPRO",
+      "value": "357",
+      "domain": ".casalemedia.com",
+      "path": "/",
+      "expires": 1682814625.356039,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__gpi",
+      "value": "UID=0000099905f15356:T=1675038623:RT=1675096428:S=ALNI_MaQIVrLAdNmYGFR7yBnqnU4eZvwQw",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1708734623,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUkSxfUVNYe4-eGm__5b5u2qoKhLihS2XMuOJcHLVcnWIOFDQcJMtze7Bwt6V0c",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1709656429.350617,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ruds",
+      "value": "H4sIAAAAAAAA_-MSNjewNDWyNDM2NzQ1tLA0MLU0NxPiM9TNLjUIDwj0comsDAkEANnv7uElAAAA",
+      "domain": ".rfihub.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "rud",
+      "value": "H4sIAAAAAAAA_-MSNjewNDWyNDM2NzQ1tLA0MLU0NxPiM9TNLjUIDwj0comsDAkEANnv7uElAAAA",
+      "domain": ".rfihub.com",
+      "path": "/",
+      "expires": 1708792429.598674,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "euds",
+      "value": "H4sIAAAAAAAA_-OSMXR2dA12da3INUguKCpIDo10N8wM8ylOLMtPKgYAM7JkKx4AAAA",
+      "domain": ".rfihub.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "eud",
+      "value": "H4sIAAAAAAAA_-OSMXR2dA12da3INUguKCpIDo10N8wM8ylOLMtPKg7iNTQzNzWwNDMxsjQ1MXrFiMoHAC6IzpQ9AAAA",
+      "domain": ".rfihub.com",
+      "path": "/",
+      "expires": 1708792429.598747,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "tuuid",
+      "value": "f8f1b61c-0a7e-4e9f-a251-8f018cdae378",
+      "domain": ".bidswitch.net",
+      "path": "/",
+      "expires": 1706632429.801108,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "c",
+      "value": "1675096429",
+      "domain": ".bidswitch.net",
+      "path": "/",
+      "expires": 1706632429.643613,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "tuuid_lu",
+      "value": "1675096429",
+      "domain": ".bidswitch.net",
+      "path": "/",
+      "expires": 1706632429.801181,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "A3",
+      "value": "d=AQABBG3x12MCEEVJ1DsdwU4hJdbSCXpGAx4FEgEBAQFC2WPhYwAAAAAA_eMAAA&S=AQAAAnGiwHVnrwBrCDF1JPsB4_U",
+      "domain": ".yahoo.com",
+      "path": "/",
+      "expires": 1706654029.803489,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "OTP",
+      "value": "BrtxgLrli7jfKIW467q3Sq5nMm8Wr1PuPKpn-kJw9Wk",
+      "domain": ".onetag-sys.com",
+      "path": "/",
+      "expires": 1709670009.493802,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "dyn_u",
+      "value": "06030001_63d7f16db1d57",
+      "domain": ".dyntrk.com",
+      "path": "/",
+      "expires": 1706632429.949321,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "IDSYNC",
+      "value": "18yl~29ps",
+      "domain": ".analytics.yahoo.com",
+      "path": "/",
+      "expires": 1706632429.803449,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "zuid",
+      "value": "37dK3GKVYRCYalEdy6n-",
+      "domain": ".zemanta.com",
+      "path": "/",
+      "expires": 1706632430.150152,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "audience",
+      "value": "e08d9972-a0bb-11ed-9ada-1521ea3e0401",
+      "domain": ".spotxchange.com",
+      "path": "/",
+      "expires": 1677515630.751082,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "d",
+      "value": "ECYBCQGWKIEA",
+      "domain": ".quantserve.com",
+      "path": "/",
+      "expires": 1682876648.080469,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "mc",
+      "value": "63d801e8-02bfe-2056f-2a87c",
+      "domain": ".quantserve.com",
+      "path": "/",
+      "expires": 1709315048.080555,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "TestIfCookieP",
+      "value": "ok",
+      "domain": ".smartadserver.com",
+      "path": "/",
+      "expires": 1709315049.243956,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "pid",
+      "value": "5280382529562233072",
+      "domain": ".smartadserver.com",
+      "path": "/",
+      "expires": 1709315049.243872,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "csync",
+      "value": "76:CAESEL705V7NQrWIB0H_qBH10C4",
+      "domain": ".smartadserver.com",
+      "path": "/",
+      "expires": 1706636649.369637,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "wfivefivec",
+      "value": "8HJpzTzn1Pmyco5",
+      "domain": ".w55c.net",
+      "path": "/",
+      "expires": 1709228649.436319,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sa-user-id",
+      "value": "s%3A0-27265a39-8ae4-4dad-7886-44745f870e39.MI57OKSLWz8obbHIixMGg09MSmfO6w%2Fy2qAbUJlcqWs",
+      "domain": "sync.srv.stackadapt.com",
+      "path": "/",
+      "expires": 1706636648.420426,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sa-user-id-v2",
+      "value": "s%3AJyZaOYrkTa14hkR0X4cOObFKxxY.9ibGSr6i6m1fViztdF6LDcVPaIrL1IWrS7E%2BH%2BqwI9A",
+      "domain": ".srv.stackadapt.com",
+      "path": "/",
+      "expires": 1706636648.420485,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "matchgoogle",
+      "value": "5",
+      "domain": ".w55c.net",
+      "path": "/",
+      "expires": 1677692649.436393,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "UID",
+      "value": "bdc270abeca8c323b1a387f7638fd1fc",
+      "domain": ".ads.stickyadstv.com",
+      "path": "/",
+      "expires": 1677692649.373749,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "uid-bp-159",
+      "value": "CAESEIagxy-g-fCQ4zTh8Vu5HVM",
+      "domain": ".ads.stickyadstv.com",
+      "path": "/",
+      "expires": 1680284649.373843,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "TestAB_Groups",
+      "value": "search-input-header-adview_enabled.vasaut-do-simulation-label-button_control.ngage-new-adview-media-gallery_basic.ds-web-vitals_enabled.bj-new-relic-browser-monitoring-agent_control.seller-transaction-history_enabled.vasimo-buying-power-ldp_enabled.cdrelrank-synonym_on.txp-purchase-button-tooltip_enabled.payg-pos-new-autos-plans-subscription_invert.newadcard_enabled.imo-xp-dynamic-map_newPosition.vasaut-upfront-value-percentage_enabled.mini-profile-whatsapp-button_enabled.alert-box-comments-rating_enabled.re-attributes-bjQTZ-bjfilters_control.central-ajuda-opcao-chat-sf-olx-pay_control.ppf-myplan-new-cars-pos_enabled.integrationgaleria_enabled.txp-retry-transactions_pix.buyer-rating_enabled.payg-boleto-option_disabled.adv-active-insurads_enabled.restricao-preco-ai-auto_control.trust-validations-sdk-unico_enable.adview-category3060-details_control.dispute-automatic-decision_A.adv-gemini-less-positions_enabled.search-intention-filters_control",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675111806.644227,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "pubaccid",
+      "value": "a55836a7-b682-4356-919e-b8ed088d231f",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675110307.59495,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "NeF3pxPRIbKbrGEkJFC.g.tGtoFA8j3k4uSdyC_w_ws-1675109740-0-Ae/3KX4cO/eEi387cG51DtnPxJUCOzy3EJWFi6LsCXVsneHSDs3m0sXOkp1YcSZH3M3sYYAtLHZY3hbs1V9jyyI=",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675111540.261581,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_hjSession_736533",
+      "value": "eyJpZCI6ImI3MjVkMWMyLTRlOTMtNDg5Yi05ZGE4LTUzMmZhZmVlZWUwNCIsImNyZWF0ZWQiOjE2NzUxMDk3NDEyMDMsImluU2FtcGxlIjpmYWxzZX0=",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675111808,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_hjAbsoluteSessionInProgress",
+      "value": "1",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675111808,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "s_id",
+      "value": "d9fdadd2-5cb4-45c6-8dab-0f66a6cad6782023-01-30T20:15:41.305Z",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675111810.210961,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_hjIncludedInSessionSample",
+      "value": "0",
+      "domain": "conta.olx.com.br",
+      "path": "/",
+      "expires": 1675110128,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gat_UA-70177409-2",
+      "value": "1",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1675110068,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_50C013M2CC",
+      "value": "GS1.1.1675109741.5.1.1675110008.60.0.0",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709670008.754172,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.2144060225.1675038613",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1709670008.755897,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ANON_ID",
+      "value": "a6ntPKMZaAC6pqGpS74cMtFTjQZdZbC6jmvVI3WXZcgdGPoXMW0dd9yLqR065eZbZcZb44x4qADu8nGBAWEYqS8nxwpUyYIQEHf",
+      "domain": ".tribalfusion.com",
+      "path": "/",
+      "expires": 1682886008.982607,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://conta.olx.com.br",
+      "localStorage": [
+        {
+          "name": "loggedInEmail",
+          "value": "capitalveiculos07@gmail.com"
+        },
+        {
+          "name": "ACC_LL",
+          "value": "0|Y2FwaXRhbHZlaWN1bG9zMDdAZ21haWwuY29t"
+        }
+      ]
+    }
+  ]
+}
