@@ -5,17 +5,19 @@ import { styled } from '../config/stitches'
 interface BotStatusManagerProps {
   botStatus: BotStatus
   handlePowerSwitch: () => void
+  SearchModal: JSX.Element
 }
 
 export const BotStatusManager: React.FC<BotStatusManagerProps> = ({
   botStatus,
-  handlePowerSwitch
+  handlePowerSwitch,
+  SearchModal
 }) => {
   return (
     <S.Wrapper>
 
       <S.BotMascot>
-        MASCOT
+        {SearchModal}
       </S.BotMascot>
 
       <S.BotManager>
@@ -39,7 +41,7 @@ export const S = {
     justifyContent: 'center',
     alignItems: 'center',
     gap: '$1',
-    width: '200px',
+    minWidth: '250px',
     height: '100px',
     background: '$mauve4',
     borderRadius: '$1',

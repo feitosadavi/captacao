@@ -1,14 +1,21 @@
-import { violet } from '@radix-ui/colors';
 import { styled } from '../config/stitches';
 
 export const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: '10px',
+  gap: '$5',
   width: '100%',
   marginRight: '10px'
 })
+
+export const ControlPanel = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  gap: '$4'
+})
+
 export const Fieldset = styled('fieldset', {
   all: 'unset',
   display: 'flex',

@@ -32,7 +32,7 @@ const S = {
     display: 'flex',
     height: '95%',
     width: '100%',
-    gap: '10px',
+    gap: '$4',
   })
 }
 

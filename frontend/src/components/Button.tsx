@@ -11,6 +11,7 @@ export interface ButtonProps {
   variant?: ButtonVariant
   full?: boolean
   onClick?: () => {}
+  sx?: any
 }
 
 export const Button: React.FC<any> = ({ label, type = 'button', ...props }) => {
@@ -40,7 +41,7 @@ const ButtonStyles = styled('button', {
       default: {
         backgroundColor: '$mauve6',
         color: 'white',
-        boxShadow: `0 2px 10px $blackA7`,
+        boxShadow: '$1',
         '&:hover': { backgroundColor: '$mauve3' },
         '&:focus': { boxShadow: `0 0 0 2px black` },
 

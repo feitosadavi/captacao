@@ -16,7 +16,7 @@ interface ModalProps {
 
 export const Modal: React.FC<ModalProps> = ({ title, description, children, closeBtnText, onSubmit }) => (
   <Dialog.Root>
-    <Dialog.Trigger asChild>
+    <Dialog.Trigger asChild >
       <Button label={title} />
     </Dialog.Trigger>
     <Dialog.Portal>

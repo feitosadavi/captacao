@@ -185,47 +185,53 @@ export default function () {
 
   return (
     <S.Wrapper>
-      <Modal
-        title='Iniciar Pesquisa'
-        description='Certifique-se de que a gramática dos campos está correta'
-        buttonName='Iniciar Pesquisa'
-        closeBtnText='OK'
-        onSubmit={handleSearchSubmit}
-      >
-        <>
-          {
-            filterInputs.map(({ id, label, value, handleChange }) => (
-              <S.Fieldset key={id}>
-                <S.Label htmlFor={id}>{label}</S.Label>
-                <S.Input
-                  id={id}
-                  defaultValue={value}
-                  value={value}
-                  onChange={handleChange}
-                />
-              </S.Fieldset>
-            ))
-          }
-        </>
-      </Modal>
+      <S.ControlPanel>
+        {
+          targets.map(({ selected, name, progress }) => (
+            selected ?
+              <ProgressBar
+                key={name}
+                icon={name}
+                progress={progress.current}
+                total={progress.total}
+              />
+              : null
+          ))
+        }
+        <div>
+          <BotStatusManager
+            botStatus={botStatus}
+            SearchModal={
+              <Modal
+                title='Pesquisar'
+                description='Certifique-se de que a gramática dos campos está correta'
+                buttonName='Pesquisar'
+                closeBtnText='OK'
+                onSubmit={handleSearchSubmit}
+              >
+                <>
+                  {
+                    filterInputs.map(({ id, label, value, handleChange }) => (
+                      <S.Fieldset key={id}>
+                        <S.Label htmlFor={id}>{label}</S.Label>
+                        <S.Input
+                          id={id}
+                          defaultValue={value}
+                          value={value}
+                          onChange={handleChange}
+                        />
+                      </S.Fieldset>
+                    ))
+                  }
+                </>
+              </Modal>
+            }
+            handlePowerSwitch={handlePowerSwitch}
+          />
+        </div>
+      </S.ControlPanel>
 
-      <BotStatusManager
-        botStatus={botStatus}
-        handlePowerSwitch={handlePowerSwitch}
-      />
 
-      {
-        targets.map(({ selected, name, progress }) => (
-          selected ?
-            <ProgressBar
-              key={name}
-              icon={name}
-              progress={progress.current}
-              total={progress.total}
-            />
-            : null
-        ))
-      }
 
       <Log
         setLogMessages={setLogMessages}
