@@ -23,7 +23,7 @@ const app = (0, express_1.default)();
 const httpServer = http_1.default.createServer(app);
 exports.io = new socket_io_1.Server(httpServer, {
     cors: {
-        origin: "http://localhost:1420"
+        origin: "*"
     }
 });
 let isBusy = false;
@@ -64,6 +64,10 @@ app.get('/is-busy', (req, res) => {
 });
 app.get('/is-not-busy', (req, res) => {
     isBusy = false;
+});
+app.get('/stop', (req, res) => {
+    process.abort();
+    // isBusy = false
 });
 httpServer.listen(5000, () => {
     console.log(`Server listening on ${5000}`);

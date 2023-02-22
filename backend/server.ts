@@ -63,6 +63,11 @@ app.get('/is-not-busy', (req, res) => {
   isBusy = false
 });
 
+app.get('/stop', (req, res) => {
+  process.abort()
+  // isBusy = false
+});
+
 httpServer.listen(5000, () => {
   console.log(`Server listening on ${5000}`);
 });
