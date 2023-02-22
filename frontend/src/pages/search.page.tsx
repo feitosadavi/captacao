@@ -2,15 +2,14 @@ import React from "react";
 import { io } from 'socket.io-client';
 import { Socket } from 'socket.io';
 import { DefaultEventsMap } from 'socket.io/dist/typed-events';
-import { invoke } from "@tauri-apps/api/tauri";
 
-// import { LogMessageType, ProgressMessageType, StackMessageType } from 'domain/logger.protocols';
+import { invoke } from "@tauri-apps/api/tauri";
+import { appWindow } from '@tauri-apps/api/window'
 
 import { runWebWorkerSync } from '../workers/runWebWorkerSync';
-import { SearchBar, ProgressBar, Log, BotStatusManager, Modal } from '../components'
+import { ProgressBar, Log, BotStatusManager, Modal } from '../components'
 import * as S from './search.styles'
-import { ConsoleMessage, Progress, Target, TargetKeys, TargetOptions } from '../types';
-import { Messenger } from './messenger';
+import { ConsoleMessage, Progress, TargetKeys, TargetOptions } from '../types';
 
 type LogMessageType = any
 type ProgressMessageType = any
@@ -25,10 +24,6 @@ const initialTargets: NewTarget[] = [{
   selected: true
 }, {
   name: 'webmotors',
-  progress: { current: 0, total: 0 },
-  selected: false
-}, {
-  name: 'icarros',
   progress: { current: 0, total: 0 },
   selected: false
 }]
@@ -97,6 +92,7 @@ export default function () {
     }
   })
 
+
   const isFirstMount = React.useRef<boolean>(true)
   React.useEffect(() => {
     if (isFirstMount.current) {
@@ -144,16 +140,12 @@ export default function () {
 
   async function handleStop () {
     socket?.disconnect()
-    await invoke("stop");
+    fetch('http://localhost:5000/stop')
   }
 
   async function handlePowerSwitch () {
     botStatus === 'offline' ? handleStart() : handleStop()
   }
-
-  // function handleSearchChange (e: React.ChangeEvent<HTMLInputElement>) {
-  //   setSearchParams(e.currentTarget.value)
-  // }
 
   async function handleSearchSubmit () {
     if (botStatus === 'online') {
@@ -193,13 +185,6 @@ export default function () {
 
   return (
     <S.Wrapper>
-      {/* <SearchBar
-        loading={botStatus === 'busy'}
-        value={searchParams}
-        onChange={handleSearchChange}
-        onClick={handleSearchClick}
-      /> */}
-
       <Modal
         title='Iniciar Pesquisa'
         description='Certifique-se de que a gramática dos campos está correta'

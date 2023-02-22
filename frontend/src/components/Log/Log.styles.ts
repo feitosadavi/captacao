@@ -4,7 +4,8 @@ export const Container = styled('div', {
   background: '$mauve4',
   boxShadow: '$2',
   borderRadius: '$1',
-  width: '500px',
+  width: '100%',
+  px: '$1'
 })
 
 export const LogMessageWrapper = styled("div", {
@@ -51,9 +52,10 @@ export const Wrapper = styled('div', {
 export const ToolBar = styled('div', {
   display: 'flex',
   alignItems: 'center',
-
-  px: '$2',
-  // width: '100%',
+  justifyContent: 'space-between',
+  // px: '$2',
+  py: '$2',
+  width: '100%',
   // height: '40px',
   // background: '$mauve3',
 })

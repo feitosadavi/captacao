@@ -35,14 +35,15 @@ export const ToggleGroup: React.FC<ToogleGroupProps> = ({ items, selected, onCha
 
 const ToggleGroupRoot = styled(RadixToggleGroup.Root, {
   display: 'inline-flex',
-  backgroundColor: mauve.mauve6,
+  backgroundColor: '$mauve2',
   borderRadius: 4,
   boxShadow: `0 2px 10px ${blackA.blackA7}`,
 });
 
 const ToggleGroupItem = styled(RadixToggleGroup.Item, {
   all: 'unset',
-  backgroundColor: 'white',
+  backgroundColor: '$mauve2',
+  cursor: 'pointer',
   color: mauve.mauve11,
   height: 35,
   minWidth: 35,
@@ -55,7 +56,6 @@ const ToggleGroupItem = styled(RadixToggleGroup.Item, {
   marginLeft: 1,
   '&:first-child': { marginLeft: 0, borderTopLeftRadius: 4, borderBottomLeftRadius: 4 },
   '&:last-child': { borderTopRightRadius: 4, borderBottomRightRadius: 4 },
-  '&:hover': { backgroundColor: violet.violet3 },
-  '&[data-state=on]': { backgroundColor: violet.violet5, color: violet.violet11 },
-  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px black` },
+  '&:hover': { backgroundColor: '$mauve10' },
+  '&[data-state=on]': { backgroundColor: '$mauve7', color: '$mauve11' },
 });
