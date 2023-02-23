@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev server.ts",
     "start": "node dist/server.js",
+    "dev": "nodemon --watch 'backend/' --exec \"ts-node-dev -r ts-node-dev server.ts\" -e ts",
     "build": "NODE_ENV=production tsc --build"
   },
   "dependencies": {

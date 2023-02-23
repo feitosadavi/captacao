@@ -19,10 +19,10 @@ async function main () {
 
   const res = await postsGetter.start(query)
 
-  // // console.log({ res });
+  console.log({ res });
 
 
-  // parentPort?.postMessage(['https://www.webmotors.com.br/carros/DF/Fiat/Uno'])
+  parentPort?.postMessage(res)
 
 }
 

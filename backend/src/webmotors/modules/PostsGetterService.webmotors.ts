@@ -61,9 +61,11 @@ export class PostsGetterService {
   }
 
   buildPostUrl ({ UniqueId, Specification: { Version, Make, Model, NumberPorts, YearFabrication } }: SearchResult) {
-    const sanitizedVersion = Version.Value.toLowerCase().replace(' ', '-')
+    const sanitizedVersion = Version.Value.toLowerCase().replaceAll(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    const sanitizedMake = Make.Value.toLowerCase().replaceAll(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    const sanitizedModel = Model.Value.toLowerCase().replaceAll(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 
-    return `${WEBMOTORS_SITE_BASE_PATH}/${Model.Value}/${Make.Value}/${sanitizedVersion}/${NumberPorts}/${YearFabrication}/${UniqueId}`
+    return `${WEBMOTORS_SITE_BASE_PATH}/${sanitizedMake}/${sanitizedModel}/${sanitizedVersion}/${NumberPorts}/${YearFabrication}/${UniqueId}`
   }
 
   countNumberOfRequests (totalOfPosts: number, itensPerRequest: number): number {

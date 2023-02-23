@@ -18,7 +18,7 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
     runWorkerSync({
       name: 'MessengerWorker',
       target,
-      data: { links, message },
+      data: { links, message, target },
       eventManager,
       onMessage: ({ type, content }) => {
         const msg: LogMessageType = {

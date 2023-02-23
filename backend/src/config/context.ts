@@ -1,9 +1,11 @@
 import { chromium, Page } from '@playwright/test';
 import path from 'path';
+import { TargetKeys } from '../domain/target';
 import { Auth } from '../olx/modules/Auth';
 
 type InitBrowserOptions = {
   auth?: boolean
+  target: TargetKeys
   viewport?: {
     width?: number,
     height?: number
@@ -25,7 +27,7 @@ async function initBrowser (options?: InitBrowserOptions) {
 
       if (options?.auth) {
         const auth = new Auth(page);
-        await auth.authenticateWithEmailAndPassword()
+        await auth.authenticateWithEmailAndPassword(options.target)
         // Save signed-in state to 'storageState.json'.
         await page.context().storageState({ path: storageStatePath });
       }

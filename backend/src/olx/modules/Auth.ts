@@ -1,16 +1,31 @@
 import { Page } from '@playwright/test';
+import { TargetKeys } from '../../domain/target';
 async function delay (ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+const authOptions = {
+  'olx': {
+    url: 'https://conta.olx.com.br/acesso',
+    email: 'https://conta.olx.com.br/acesso',
+    password: 'CV204060'
+  },
+  'webmotors': {
+    url: 'capitalveiculos07@gmail.com',
+    email: 'davifeitosa.trab@gmail.com',
+    password: '40028922dD$'
+  }
 }
 
 class EmailAndPasswordStrategy {
   constructor(private readonly page: Page) { }
 
-  async authenticateWithEmailAndPassword () {
+  async authenticateWithEmailAndPassword (target: TargetKeys) {
     try {
-      await this.page.goto('https://conta.olx.com.br/acesso', { waitUntil: 'commit' });
-      await this.page.type("input[type='email']", 'capitalveiculos07@gmail.com')
-      await this.page.type("input[type='password']", 'CV204060')
+      const { url, email, password } = authOptions[target]
+      await this.page.goto(url, { waitUntil: 'commit' });
+      await this.page.type("input[type='email']", email)
+      await this.page.type("input[type='password']", password)
       await this.page.getByText(/^Entrar$/).click();
       await delay(1500)
       // Save signed-in state to 'storageState.json'.

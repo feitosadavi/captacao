@@ -5,7 +5,7 @@
       "value": "bc6c2849-2d60-47cc-8581-9d73b7d50609",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1709670006.644132,
+      "expires": 1711694618.288919,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -15,7 +15,7 @@
       "value": "98a600da-66a8-48a4-81e7-3562394aafc2",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1709670009.009666,
+      "expires": 1711694620.93766,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -31,26 +31,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "fp_id",
-      "value": "WEB:035fe53d98d4f5156c5774c4055b66d4",
-      "domain": ".olx.com.br",
-      "path": "/",
-      "expires": 1675643412,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "session_id",
-      "value": "WEB:035fe53d98d4f5156c5774c4055b66d4",
-      "domain": ".olx.com.br",
-      "path": "/",
-      "expires": 1675643412,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "u",
       "value": "fwAAAWPXD5Q4KgbQNdhpAgB=",
       "domain": ".t.tailtarget.com",
@@ -61,31 +41,11 @@
       "sameSite": "None"
     },
     {
-      "name": "_ssc",
-      "value": "y",
-      "domain": ".t.tailtarget.com",
-      "path": "/",
-      "expires": 1675211414.056693,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "G_ENABLED_IDPS",
       "value": "google",
       "domain": ".conta.olx.com.br",
       "path": "/",
       "expires": 1709598612.920909,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_gid",
-      "value": "GA1.3.1931513146.1675038613",
-      "domain": ".olx.com.br",
-      "path": "/",
-      "expires": 1675196408,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -119,16 +79,6 @@
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
-    },
-    {
-      "name": "tt.nprf",
-      "value": "",
-      "domain": "conta.olx.com.br",
-      "path": "/",
-      "expires": 1675125013,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
     },
     {
       "name": "n",
@@ -185,7 +135,7 @@
       "value": "eyJpZCI6ImE2Yjc5NTJhLTdhMzYtNWNhNy1iNzJmLWQ3ZTFlNDljMTBmNiIsImNyZWF0ZWQiOjE2NzUwMzg2MTIyMjAsImV4aXN0aW5nIjp0cnVlfQ==",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1706646008,
+      "expires": 1708670619,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -257,26 +207,6 @@
       "path": "/",
       "expires": 1682814625.356039,
       "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "__gpi",
-      "value": "UID=0000099905f15356:T=1675038623:RT=1675096428:S=ALNI_MaQIVrLAdNmYGFR7yBnqnU4eZvwQw",
-      "domain": ".olx.com.br",
-      "path": "/",
-      "expires": 1708734623,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "IDE",
-      "value": "AHWqTUkSxfUVNYe4-eGm__5b5u2qoKhLihS2XMuOJcHLVcnWIOFDQcJMtze7Bwt6V0c",
-      "domain": ".doubleclick.net",
-      "path": "/",
-      "expires": 1709656429.350617,
-      "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
@@ -521,41 +451,41 @@
       "sameSite": "None"
     },
     {
-      "name": "TestAB_Groups",
-      "value": "search-input-header-adview_enabled.vasaut-do-simulation-label-button_control.ngage-new-adview-media-gallery_basic.ds-web-vitals_enabled.bj-new-relic-browser-monitoring-agent_control.seller-transaction-history_enabled.vasimo-buying-power-ldp_enabled.cdrelrank-synonym_on.txp-purchase-button-tooltip_enabled.payg-pos-new-autos-plans-subscription_invert.newadcard_enabled.imo-xp-dynamic-map_newPosition.vasaut-upfront-value-percentage_enabled.mini-profile-whatsapp-button_enabled.alert-box-comments-rating_enabled.re-attributes-bjQTZ-bjfilters_control.central-ajuda-opcao-chat-sf-olx-pay_control.ppf-myplan-new-cars-pos_enabled.integrationgaleria_enabled.txp-retry-transactions_pix.buyer-rating_enabled.payg-boleto-option_disabled.adv-active-insurads_enabled.restricao-preco-ai-auto_control.trust-validations-sdk-unico_enable.adview-category3060-details_control.dispute-automatic-decision_A.adv-gemini-less-positions_enabled.search-intention-filters_control",
-      "domain": ".olx.com.br",
+      "name": "ANON_ID",
+      "value": "a6ntPKMZaAC6pqGpS74cMtFTjQZdZbC6jmvVI3WXZcgdGPoXMW0dd9yLqR065eZbZcZb44x4qADu8nGBAWEYqS8nxwpUyYIQEHf",
+      "domain": ".tribalfusion.com",
       "path": "/",
-      "expires": 1675111806.644227,
+      "expires": 1682886008.982607,
       "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
+      "secure": true,
+      "sameSite": "None"
     },
     {
-      "name": "pubaccid",
-      "value": "a55836a7-b682-4356-919e-b8ed088d231f",
+      "name": "TestAB_Groups",
+      "value": "search-input-header-adview_enabled.ngage-new-adview-media-gallery_with-security.ds-web-vitals_enabled.bj-new-relic-browser-monitoring-agent_control.seller-transaction-history_enabled.vasimo-buying-power-ldp_enabled.cdrelrank-synonym_on.txp-purchase-button-tooltip_enabled.newadcard_enabled.payg-pos-new-autos-plans-subscription_invert.imo-xp-dynamic-map_newPosition.alert-box-comments-rating_enabled.txp-retry-transactions_pix.txp-fakedoor-buy-button_enabled.buyer-rating_enabled.payg-boleto-option_disabled.ad-insertion-captcha_enabled.trust-validations-sdk-unico_enable.search-intention-filters_control.adview-category3060-details_enabled.mini-profile-whatsapp-button_enabled.imo-xp-adview-reordering_control.adv-richmedia-position_enabled.separacao-lidos-central_w-count",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1675110307.59495,
+      "expires": 1677136418.289035,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "__cf_bm",
-      "value": "NeF3pxPRIbKbrGEkJFC.g.tGtoFA8j3k4uSdyC_w_ws-1675109740-0-Ae/3KX4cO/eEi387cG51DtnPxJUCOzy3EJWFi6LsCXVsneHSDs3m0sXOkp1YcSZH3M3sYYAtLHZY3hbs1V9jyyI=",
+      "value": "UqPITdCOkgAuUuCwZ.0FbgZ0jmd1EDgJpxmInpPRgcE-1677134618-0-AWGrNt+JI9lZr8Coas+rrlALt0XAG3MTfw2u1xKoSDwI7iluZgenSPhsiS61GNkAChnPYVmT+p52dJ0EMYqAkM8=",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1675111540.261581,
+      "expires": 1677136418.927118,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_hjSession_736533",
-      "value": "eyJpZCI6ImI3MjVkMWMyLTRlOTMtNDg5Yi05ZGE4LTUzMmZhZmVlZWUwNCIsImNyZWF0ZWQiOjE2NzUxMDk3NDEyMDMsImluU2FtcGxlIjpmYWxzZX0=",
+      "value": "eyJpZCI6ImQyZjBjOWUwLWQ4NGItNDI0MS1iNDkxLTc4ZTYxMWE5YjljNyIsImNyZWF0ZWQiOjE2NzcxMzQ2MTk1NTAsImluU2FtcGxlIjpmYWxzZX0=",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1675111808,
+      "expires": 1677136419,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -565,68 +495,88 @@
       "value": "1",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1675111808,
+      "expires": 1677136419,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
-    },
-    {
-      "name": "s_id",
-      "value": "d9fdadd2-5cb4-45c6-8dab-0f66a6cad6782023-01-30T20:15:41.305Z",
-      "domain": ".olx.com.br",
-      "path": "/",
-      "expires": 1675111810.210961,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_hjIncludedInSessionSample",
-      "value": "0",
-      "domain": "conta.olx.com.br",
-      "path": "/",
-      "expires": 1675110128,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "_gat_UA-70177409-2",
-      "value": "1",
-      "domain": ".olx.com.br",
-      "path": "/",
-      "expires": 1675110068,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
     },
     {
       "name": "_ga_50C013M2CC",
-      "value": "GS1.1.1675109741.5.1.1675110008.60.0.0",
+      "value": "GS1.1.1677134619.6.0.1677134619.60.0.0",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1709670008.754172,
+      "expires": 1711694619.899127,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga",
-      "value": "GA1.1.2144060225.1675038613",
+      "value": "GA1.3.2144060225.1675038613",
       "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1709670008.755897,
+      "expires": 1711694620.035094,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
-      "name": "ANON_ID",
-      "value": "a6ntPKMZaAC6pqGpS74cMtFTjQZdZbC6jmvVI3WXZcgdGPoXMW0dd9yLqR065eZbZcZb44x4qADu8nGBAWEYqS8nxwpUyYIQEHf",
-      "domain": ".tribalfusion.com",
+      "name": "_gid",
+      "value": "GA1.3.1774827394.1677134620",
+      "domain": ".olx.com.br",
       "path": "/",
-      "expires": 1682886008.982607,
+      "expires": 1677221020,
       "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "s_id",
+      "value": "03fb8b45-f09f-45cf-b3a7-071d3c173d352023-02-23T06:43:40.179Z",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1677136421.72403,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUnpX0CiXYJzt9Y_-1ln1gaWlfk_W_RQsSpRtc5IMeSzaKHHChgczhj6qEarB3U",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1711694620.483851,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__gpi",
+      "value": "UID=0000099905f15356:T=1675038623:RT=1677134620:S=ALNI_MaQIVrLAdNmYGFR7yBnqnU4eZvwQw",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": 1708734623,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "olx-cookies-accept",
+      "value": "1",
+      "domain": ".olx.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "9NF5T6BkFAc7oODnG1kHECmh87vmAj4qpcKHrHJg.00-1677135685-0-AbaAzat7Z/VmEcZXIgx086zE/nghZt5HK/L4PBetTNRM1fyEFmwHhNFMXtxYOkpQ8Ze28d1c13ZBRfEYoLiSs1I=",
+      "domain": ".useinsider.com",
+      "path": "/",
+      "expires": 1677137485.875372,
+      "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     }
@@ -636,12 +586,153 @@
       "origin": "https://conta.olx.com.br",
       "localStorage": [
         {
+          "name": "insUserPermissionGranted",
+          "value": "{\"data\":{\"state\":false},\"_expires\":1708670622000}"
+        },
+        {
           "name": "loggedInEmail",
           "value": "capitalveiculos07@gmail.com"
         },
         {
+          "name": "ins-gaSSId",
+          "value": "{\"data\":\"jto2cqii-rt9v-aucf-warl-410cce4o3fpx_1677134620\",\"_expires\":1677136420000}"
+        },
+        {
+          "name": "ins-uVDate",
+          "value": "{\"data\":[1677134620],\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-current-currency",
+          "value": "{\"data\":\"BRL\",\"_expires\":1677221020000}"
+        },
+        {
+          "name": "insUserInfoHash",
+          "value": "{\"data\":2045421322,\"_expires\":1708670621000}"
+        },
+        {
+          "name": "ins-landingPage",
+          "value": "{\"data\":\"https://conta.olx.com.br/anuncios/publicados\",\"_expires\":1679726620000}"
+        },
+        {
+          "name": "ins-sourceUrl",
+          "value": "{\"data\":\"\",\"_expires\":1679726620000}"
+        },
+        {
+          "name": "predictiveData",
+          "value": "{\"data\":{\"723b743cbf46c0318aca6c20b5656b85\":{},\"969304bbdae5f9b23c2b8a9872edfc28\":\"unknown\",\"2612e8457db82f1cf7fa6af3de9d5ba0\":{},\"0b03e2a2b57e66d3da24a15521bea4c0\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"0c4f617146b32a98fb787278b1fbcd87\":\"08a3ca00d24b9bf27def2b3106e32ab0\",\"730b384aff96e25a19ebfb5ee64b9320\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"223e10f4d81e5d3fb2734be5cf6eda01\":{},\"9ae5473ffbcaa12e7cec27d41cbdcfdd\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"5f962b569c59230115d31915cf1f4133\":{},\"8c043f777fc60cdfe3566137cd1e9591\":60000,\"08fd784ec51758c4471421e286bce9fa\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"f9d5ccb0e1e321b4f205e786027578b8\":\"unknown\",\"237870e3beee1eb53a6aa966c49a9d4e\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"d0932c7a03a233eba8645b118cd4c716\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"a1e2f27836af11fc3a36de5ab1bfc7f5\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"00b732eecb0c03c2bdec364ae3687aa4\":\"unknown\",\"0434938f9d57bd2b302921b1809a9cdd\":{}},\"_expires\":1677134680692}"
+        },
+        {
+          "name": "ins-loggedinUser",
+          "value": "{\"data\":1,\"_expires\":1708670620000}"
+        },
+        {
           "name": "ACC_LL",
           "value": "0|Y2FwaXRhbHZlaWN1bG9zMDdAZ21haWwuY29t"
+        },
+        {
+          "name": "ins-wp-active-tab",
+          "value": "{\"data\":\"0.hl3yrtmviep\",\"_expires\":1677221020000}"
+        },
+        {
+          "name": "ins-user-segments",
+          "value": "{\"data\":{\"47\":93},\"_expires\":1677138220000}"
+        },
+        {
+          "name": "ins-userDateV",
+          "value": "{\"data\":[1677134620],\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-wp-native-permission-impression",
+          "value": "{\"data\":true,\"_expires\":1708238620000}"
+        },
+        {
+          "name": "ins-wp-request-sent",
+          "value": "{\"data\":true,\"_expires\":1677221020000}"
+        },
+        {
+          "name": "spUID",
+          "value": "{\"data\":\"16771346202545e60831a06.063e39ba\",\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-default-attributes",
+          "value": "{\"data\":{\"last_abandoned_cart_amount\":0,\"last_visited_category_url\":\"https://www.olx.com.br/\",\"last_visited_product_url\":\"https://www.olx.com.br/\",\"last_abandoned_product_url\":\"https://www.olx.com.br/\"},\"_expires\":1708670620000}"
+        },
+        {
+          "name": "userLocation",
+          "value": "{\"data\":{\"geoId\":6317781,\"city\":\"Novo Gama\",\"region\":\"Goias\",\"regionId\":\"GO\",\"country\":\"BR\",\"cName\":\"Brazil\",\"request\":\"dd9dd0402df2f602c81476bb6912909c\",\"latitude\":\"67fbb14b2371f770071e015077cf2f24\",\"longitude\":\"8711edd0aeec1d6bc4c4aea653f277df\"},\"_expires\":1677221021000}"
+        }
+      ]
+    },
+    {
+      "origin": "https://olxbrclassificados.api.useinsider.com",
+      "localStorage": [
+        {
+          "name": "insUserPermissionGranted",
+          "value": "{\"data\":{\"state\":false},\"_expires\":1708670622000}"
+        },
+        {
+          "name": "ins-gaSSId",
+          "value": "{\"data\":\"jto2cqii-rt9v-aucf-warl-410cce4o3fpx_1677134620\",\"_expires\":1677136420000}"
+        },
+        {
+          "name": "ins-uVDate",
+          "value": "{\"data\":[1677134620],\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-current-currency",
+          "value": "{\"data\":\"BRL\",\"_expires\":1677221020000}"
+        },
+        {
+          "name": "insUserInfoHash",
+          "value": "{\"data\":2045421322,\"_expires\":1708670621000}"
+        },
+        {
+          "name": "ins-landingPage",
+          "value": "{\"data\":\"https://conta.olx.com.br/anuncios/publicados\",\"_expires\":1679726620000}"
+        },
+        {
+          "name": "ins-sourceUrl",
+          "value": "{\"data\":\"\",\"_expires\":1679726620000}"
+        },
+        {
+          "name": "predictiveData",
+          "value": "{\"data\":{\"723b743cbf46c0318aca6c20b5656b85\":{},\"969304bbdae5f9b23c2b8a9872edfc28\":\"unknown\",\"2612e8457db82f1cf7fa6af3de9d5ba0\":{},\"0b03e2a2b57e66d3da24a15521bea4c0\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"0c4f617146b32a98fb787278b1fbcd87\":\"08a3ca00d24b9bf27def2b3106e32ab0\",\"730b384aff96e25a19ebfb5ee64b9320\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"223e10f4d81e5d3fb2734be5cf6eda01\":{},\"9ae5473ffbcaa12e7cec27d41cbdcfdd\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"5f962b569c59230115d31915cf1f4133\":{},\"8c043f777fc60cdfe3566137cd1e9591\":60000,\"08fd784ec51758c4471421e286bce9fa\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"f9d5ccb0e1e321b4f205e786027578b8\":\"unknown\",\"237870e3beee1eb53a6aa966c49a9d4e\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"d0932c7a03a233eba8645b118cd4c716\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"a1e2f27836af11fc3a36de5ab1bfc7f5\":\"5ab1ebf6b0e986a23b6d3cb580bfd841\",\"00b732eecb0c03c2bdec364ae3687aa4\":\"unknown\",\"0434938f9d57bd2b302921b1809a9cdd\":{}},\"_expires\":1677134680692}"
+        },
+        {
+          "name": "ins-loggedinUser",
+          "value": "{\"data\":1,\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-wp-active-tab",
+          "value": "{\"data\":\"0.hl3yrtmviep\",\"_expires\":1677221020000}"
+        },
+        {
+          "name": "ins-user-segments",
+          "value": "{\"data\":{\"47\":93},\"_expires\":1677138220000}"
+        },
+        {
+          "name": "ins-userDateV",
+          "value": "{\"data\":[1677134620],\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-wp-native-permission-impression",
+          "value": "{\"data\":true,\"_expires\":1708238620000}"
+        },
+        {
+          "name": "ins-wp-request-sent",
+          "value": "{\"data\":true,\"_expires\":1677221020000}"
+        },
+        {
+          "name": "spUID",
+          "value": "{\"data\":\"16771346202545e60831a06.063e39ba\",\"_expires\":1708670620000}"
+        },
+        {
+          "name": "ins-default-attributes",
+          "value": "{\"data\":{\"last_abandoned_cart_amount\":0,\"last_visited_category_url\":\"https://www.olx.com.br/\",\"last_visited_product_url\":\"https://www.olx.com.br/\",\"last_abandoned_product_url\":\"https://www.olx.com.br/\"},\"_expires\":1708670620000}"
+        },
+        {
+          "name": "userLocation",
+          "value": "{\"data\":{\"geoId\":6317781,\"city\":\"Novo Gama\",\"region\":\"Goias\",\"regionId\":\"GO\",\"country\":\"BR\",\"cName\":\"Brazil\",\"request\":\"dd9dd0402df2f602c81476bb6912909c\",\"latitude\":\"67fbb14b2371f770071e015077cf2f24\",\"longitude\":\"8711edd0aeec1d6bc4c4aea653f277df\"},\"_expires\":1677221021000}"
         }
       ]
     }

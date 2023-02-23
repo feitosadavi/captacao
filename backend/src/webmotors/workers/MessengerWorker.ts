@@ -18,11 +18,11 @@ async function delay (ms: number): Promise<any> {
 async function main () {
   console.log('Webmotors - MessengerWorker');
 
-  const { links } = workerData
+  const { links, target } = workerData
 
   console.log(links)
 
-  const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
+  const messengerPage = (await initBrowser({ viewport: { height: 600, width: 1220 }, auth: true, target }))
   const messenger = new Messenger(messengerPage)
   for (const [index, link] of links.entries()) {
     try {
@@ -51,23 +51,26 @@ class Messenger {
   constructor(private readonly page?: Page) { }
 
   async sendMessage (postUrl: string, clickChatBtn?: boolean) {
+    try {
+      await this.page?.goto(postUrl, { waitUntil: 'domcontentloaded' })
 
-    await this.page?.goto(postUrl, { waitUntil: 'domcontentloaded' })
+      if (clickChatBtn) {
+        await this.clickCookiesBtn()
+      } else {
+        await this.clickChatBtn()
 
-    if (clickChatBtn) {
-      await this.clickCookiesBtn()
-    } else {
-      await this.clickChatBtn()
+        const hasSentPreviousMessages = await this.hasSentPreviousMessages()
 
-      const hasSentPreviousMessages = await this.hasSentPreviousMessages()
+        if (!hasSentPreviousMessages) {
+          await this.typeMessage()
+          const element = await this.page?.$('[aria-label="Enviar mensagem"]')
 
-      if (!hasSentPreviousMessages) {
-        await this.typeMessage()
-        const element = await this.page?.$('[aria-label="Enviar mensagem"]')
-
-        // await element?.click()
-        console.log('MENSAGEM ENVIADA!');
+          // await element?.click()
+          console.log('MENSAGEM ENVIADA!');
+        }
       }
+    } catch (error) {
+      console.error(error);
     }
   }
 

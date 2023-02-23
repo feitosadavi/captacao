@@ -11,7 +11,7 @@ const runWorkerSync = ({ name, target, data, onMessage, onExit }) => {
         console.log(process.env.NODE_ENV);
         const termination = process.env.NODE_ENV === 'production' ? 'js' : 'js';
         const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, `../${target}/workers/${name}.${termination}`), {
-            workerData: Object.assign(Object.assign({}, data), { target })
+            workerData: { ...data, target }
         });
         worker.on('message', (msg) => onMessage ? onMessage(msg) : null);
         worker.on('error', (err) => console.error(err));

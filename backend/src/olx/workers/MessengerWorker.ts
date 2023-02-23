@@ -18,9 +18,9 @@ async function delay (ms: number): Promise<any> {
 async function main () {
   console.log('MESSENGERWORKER');
 
-  const { links, message } = workerData
+  const { links, message, target } = workerData
 
-  const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
+  const messengerPage = (await initBrowser({ viewport: { height: 600 }, target }))
   const messenger = new Messenger(messengerPage)
   for (const [index, link] of links.entries()) {
     try {
