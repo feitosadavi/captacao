@@ -10,6 +10,7 @@ import { runWebWorkerSync } from '../workers/runWebWorkerSync';
 import { ProgressBar, Log, BotStatusManager, Modal } from '../components'
 import * as S from './search.styles'
 import { ConsoleMessage, Progress, TargetKeys, TargetOptions } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 type LogMessageType = any
 type ProgressMessageType = any
@@ -60,6 +61,7 @@ type SearchParams = {
   brand: string
   model: string
   state: string
+  message: string
 }
 
 type FilterInput = {
@@ -71,7 +73,7 @@ type FilterInput = {
 
 export default function () {
   const [socket, setSocket] = React.useState<Socket<DefaultEventsMap, DefaultEventsMap>>()
-  const [searchParams, setSearchParams] = React.useState<SearchParams>({ brand: 'Fiat', model: 'Uno', state: 'DF' })
+  const [searchParams, setSearchParams] = React.useState<SearchParams>({ brand: 'Fiat', model: 'Uno', state: 'DF', message: '' })
   const [logMessages, setLogMessages] = React.useState<ConsoleMessage[]>([])
   const [error, setError] = React.useState<string>('')
   const [botStatus, setBotStatus] = React.useState<BotStatus>('offline')
@@ -152,7 +154,7 @@ export default function () {
       const progress = { current: 0, total: 0 }
       const selectedTargets = targets.filter(target => target.selected).map(target => target.name)[0]
       dispatchTargets({ type: 'CHANGE_PROGRESS', selectedTargets, progress })
-      socket?.emit('search', { query: searchParams, targets: targets.filter(target => target.selected).map(target => target.name) })
+      socket?.emit('search', { message: searchParams.message, query: searchParams, targets: targets.filter(target => target.selected).map(target => target.name) })
     } else {
       setError('O bot está offline, clique no botão para ligá-lo e tente novamente!')
     }
@@ -181,6 +183,11 @@ export default function () {
     label: 'Estado',
     value: searchParams.state,
     handleChange: ({ currentTarget: { value } }) => handleSearchParamsChange(value, 'state')
+    }, {
+      id: 'message',
+      label: 'Mensagem',
+      value: searchParams.message,
+      handleChange: ({ currentTarget: { value } }) => handleSearchParamsChange(value, 'message')
   }]
 
   return (

@@ -1,24 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components';
 
 import { styled } from './config/stitches';
 import SearchPage from './pages/search.page';
+import MessagePage from './pages/message.page';
 
 import './styles.css'
-
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <SearchPage />,
-  }, {
-    path: '/olx',
-    element: <div>OLX</div>
-  }
-
-])
 
 const S = {
   Container: styled('div', {
@@ -39,11 +28,16 @@ const S = {
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
+    <BrowserRouter>
     <S.Container>
       <S.Wrapper>
         <Navbar />
-        <RouterProvider router={router} />
-      </S.Wrapper>
-    </S.Container>
+          <Routes>
+            <Route path='/' element={<SearchPage />} />
+            <Route path='/message' element={<MessagePage />} />
+          </Routes>
+        </S.Wrapper>
+      </S.Container>
+    </BrowserRouter>
   </React.StrictMode>
 );

@@ -65,10 +65,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
         "resizable": true,
-        "title": "captacao",
-        "width": 800
+        "title": "Captação v1",
+        "height": 600,
+        "width": 600
       }
     ]
   }

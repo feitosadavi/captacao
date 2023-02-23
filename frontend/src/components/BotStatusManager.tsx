@@ -23,7 +23,7 @@ export const BotStatusManager: React.FC<BotStatusManagerProps> = ({
       <S.BotManager>
         <S.Status status={botStatus}>
           &bull;
-          {botStatus}
+          {botStatus === 'busy' ? 'pesquisando' : botStatus}
         </S.Status>
 
         <S.PowerButton onClick={handlePowerSwitch} status={botStatus}>
@@ -40,7 +40,6 @@ export const S = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '$1',
     minWidth: '250px',
     height: '100px',
     background: '$mauve4',
@@ -53,6 +52,8 @@ export const S = {
   BotManager: styled('div', {
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     gap: '$2'
   }),
   Status: styled('span', {

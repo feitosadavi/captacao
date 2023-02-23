@@ -7,6 +7,13 @@ use std::process::Command;
 use std::env;
 use std::thread;
 
+fn main() {
+  tauri::Builder::default()
+    .invoke_handler(tauri::generate_handler![start, stop])
+    .run(tauri::generate_context!())
+    .expect("error while running tauri application");
+}
+
 #[tauri::command]
 fn start() {
   println!("Iniciando bot");
@@ -31,14 +38,7 @@ fn stop() {
     .expect("failed to execute process");
 }
 
-#[derive(Clone, serde::Serialize)]
-struct Payload {
-  message: String,
-}
-
-fn main() {
-  tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![start, stop])
-    .run(tauri::generate_context!())
-    .expect("error while running tauri application");
-}
+// #[tauri::command]
+// fn save_message(value: String) {
+//   fs::write("/usr/share/captacao", value).unwrap();
+// }

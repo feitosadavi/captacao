@@ -4,7 +4,7 @@ export const Container = styled('div', {
   background: '$mauve4',
   boxShadow: '$2',
   borderRadius: '$1',
-  width: '100%',
+  width: '510px',
   px: '$1'
 })
 
@@ -43,10 +43,11 @@ export const LogMessage = styled('div', {
 
 export const Wrapper = styled('div', {
   overflowY: 'scroll',
-  maxHeight: '400px',
+  width: '500px',
+  maxHeight: '200px',
 
-  px: '$3',
-  py: '$2'
+  // px: '$3',
+  // py: '$2'
 })
 
 export const ToolBar = styled('div', {

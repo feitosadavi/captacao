@@ -23,6 +23,12 @@ export const Log: React.FC<ILogProps> = ({
   handleTargetChange
 }) => {
 
+  const handleClick = (url: string) => {
+    console.log(url);
+    // window.eval(`window.location.replace('your.url')`);
+    // window.open(url, '_blank')
+  }
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -31,7 +37,7 @@ export const Log: React.FC<ILogProps> = ({
             <S.LogMessageWrapper key={`${targetName}-${i}`}>
               <BsArrowRightIcon color='white' />
 
-              <S.LogMessage variant={type}>
+              <S.LogMessage onClick={() => handleClick(description)} variant={type}>
                 <img src={`/${targetName}-logo.png`} width='25' height='13' alt={`${targetName} logo`} />
                 {description}
               </S.LogMessage>

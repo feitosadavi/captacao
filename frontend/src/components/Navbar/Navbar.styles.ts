@@ -17,7 +17,7 @@ export const Wrapper = styled('div', {
   background: '$mauve3',
 })
 
-export const NavLink = styled('a', {
+export const NavLink = styled(Link, {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -27,6 +27,7 @@ export const NavLink = styled('a', {
   padding: '$1',
   width: '20px',
   height: '20px',
+  cursor: 'pointer',
 
   '&:hover': {
     background: '$mauve7'
