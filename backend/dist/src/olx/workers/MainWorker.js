@@ -15,12 +15,12 @@ const main_1 = require("../main");
 (0, ts_node_1.register)();
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const { query, target } = node_worker_threads_1.workerData;
+        const { query, target, message } = node_worker_threads_1.workerData;
         console.log({ query, target });
         console.log(`${target} - MainWorker`);
         const bot = (0, main_1.createBot)((logMsg) => {
             node_worker_threads_1.parentPort === null || node_worker_threads_1.parentPort === void 0 ? void 0 : node_worker_threads_1.parentPort.postMessage(logMsg);
-        }, { target });
+        }, { target, message });
         bot.run(query);
     });
 }

@@ -18,13 +18,13 @@ async function delay (ms: number): Promise<any> {
 async function main () {
   console.log('MESSENGERWORKER');
 
-  const { links } = workerData
+  const { links, message } = workerData
 
   const messengerPage = (await initBrowser({ viewport: { height: 600 } }))
   const messenger = new Messenger(messengerPage)
   for (const [index, link] of links.entries()) {
     try {
-      await messenger.sendMessage(link, index === 0)
+      await messenger.sendMessage(link, message, index === 0)
 
       const msgContent: StackMessageType = {
         type: 'info',
@@ -50,11 +50,12 @@ async function main () {
 main()
 
 class Messenger {
-  msg: string = 'lorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenloren'
+  msg: string = ''
 
   constructor(private readonly page?: Page) { }
 
-  async sendMessage (postUrl: string, clickChatBtn?: boolean) {
+  async sendMessage (postUrl: string, message: string, clickChatBtn?: boolean) {
+    this.msg = message
 
     await this.page?.goto(postUrl, { waitUntil: 'domcontentloaded' })
 

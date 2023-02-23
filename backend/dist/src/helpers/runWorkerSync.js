@@ -8,7 +8,9 @@ const worker_threads_1 = require("worker_threads");
 const path_1 = __importDefault(require("path"));
 const runWorkerSync = ({ name, target, data, onMessage, onExit }) => {
     new Promise((res, rej) => {
-        const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, `../${target}/workers/${name}.ts`), {
+        console.log(process.env.NODE_ENV);
+        const termination = process.env.NODE_ENV === 'production' ? 'js' : 'js';
+        const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, `../${target}/workers/${name}.${termination}`), {
             workerData: Object.assign(Object.assign({}, data), { target })
         });
         worker.on('message', (msg) => onMessage ? onMessage(msg) : null);

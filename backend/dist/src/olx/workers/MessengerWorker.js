@@ -23,12 +23,12 @@ function delay(ms) {
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         console.log('MESSENGERWORKER');
-        const { links } = node_worker_threads_1.workerData;
+        const { links, message } = node_worker_threads_1.workerData;
         const messengerPage = (yield (0, context_1.initBrowser)({ viewport: { height: 600 } }));
         const messenger = new Messenger(messengerPage);
         for (const [index, link] of links.entries()) {
             try {
-                yield messenger.sendMessage(link, index === 0);
+                yield messenger.sendMessage(link, message, index === 0);
                 const msgContent = {
                     type: 'info',
                     label: 'olx',
@@ -53,11 +53,12 @@ main();
 class Messenger {
     constructor(page) {
         this.page = page;
-        this.msg = 'lorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenlorenloren';
+        this.msg = '';
     }
-    sendMessage(postUrl, clickChatBtn) {
+    sendMessage(postUrl, message, clickChatBtn) {
         var _a, _b;
         return __awaiter(this, void 0, void 0, function* () {
+            this.msg = message;
             yield ((_a = this.page) === null || _a === void 0 ? void 0 : _a.goto(postUrl, { waitUntil: 'domcontentloaded' }));
             if (clickChatBtn) {
                 yield this.clickCookiesBtn();

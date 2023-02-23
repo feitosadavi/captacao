@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev server.ts",
     "start": "node dist/server.js",
-    "build": "tsc --build"
+    "build": "NODE_ENV=production tsc --build"
   },
   "dependencies": {
     "@playwright/test": "^1.29.2",
@@ -15,7 +15,9 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "socket.io": "^4.5.4",
-    "ts-node": "^10.9.1"
+    "sqlite3": "^5.1.4",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.12"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

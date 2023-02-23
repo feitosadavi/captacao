@@ -28,7 +28,8 @@ exports.io = new socket_io_1.Server(httpServer, {
 });
 let isBusy = false;
 exports.io.on('connection', (socket) => {
-    socket.on('search', ({ query, targets }) => __awaiter(void 0, void 0, void 0, function* () {
+    socket.on('search', ({ query, targets, message }) => __awaiter(void 0, void 0, void 0, function* () {
+        console.log({ message });
         try {
             const queries = (0, query_parser_1.parseQuery)(query, targets);
             isBusy = true;
@@ -36,7 +37,7 @@ exports.io.on('connection', (socket) => {
                 (0, runWorkerSync_1.runWorkerSync)({
                     target,
                     name: 'MainWorker',
-                    data: { query: content },
+                    data: { query: content, message },
                     onMessage(logMsg) { socket.emit('log', logMsg); },
                 });
             });
@@ -63,6 +64,9 @@ app.get('/is-busy', (req, res) => {
     });
 });
 app.get('/is-not-busy', (req, res) => {
+    isBusy = false;
+});
+app.get('/save-message', (req, res) => {
     isBusy = false;
 });
 app.get('/stop', (req, res) => {

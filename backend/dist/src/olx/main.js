@@ -6,14 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createBot = void 0;
 const node_events_1 = __importDefault(require("node:events"));
 const runWorkerSync_1 = require("../helpers/runWorkerSync");
-function createBot(cb, { target }) {
+function createBot(cb, { target, message }) {
     const eventManager = new node_events_1.default();
     eventManager.on('log', (logMsg) => cb(logMsg));
     eventManager.on('post_links', (links) => {
         (0, runWorkerSync_1.runWorkerSync)({
             name: 'MessengerWorker',
             target,
-            data: { links },
+            data: { links, message },
             eventManager,
             onMessage: ({ type, content }) => {
                 const msg = {

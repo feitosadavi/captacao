@@ -5,9 +5,10 @@ import { runWorkerSync } from '../helpers/runWorkerSync';
 
 type RunBotInput = {
   target: 'olx' | 'webmotors',
+  message: string
 }
 
-export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | void, { target }: RunBotInput) {
+export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | void, { target, message }: RunBotInput) {
   const eventManager = new EventEmitter()
 
   eventManager.on('log', (logMsg: LogMessageType) => cb(logMsg))
@@ -17,7 +18,7 @@ export function createBot (cb: (logMessages: LogMessageType) => Promise<void> | 
     runWorkerSync({
       name: 'MessengerWorker',
       target,
-      data: { links },
+      data: { links, message },
       eventManager,
       onMessage: ({ type, content }) => {
         const msg: LogMessageType = {

@@ -8,13 +8,13 @@ register()
 async function main () {
   console.log('WEBMOTORS - MainWorker');
 
-  const { query, target } = workerData
+  const { query, target, message } = workerData
   console.log({ query, target });
 
   const olxBot = createBot((logMsg: any) => {
     parentPort?.postMessage(logMsg)
   },
-    { target }
+    { target, message }
   )
 
   olxBot.run(query)

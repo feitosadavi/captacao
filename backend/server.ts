@@ -19,16 +19,17 @@ export const io = new Server(httpServer, {
 let isBusy = false
 
 io.on('connection', (socket) => {
-  socket.on('search', async ({ query, targets }) => {
+  socket.on('search', async ({ query, targets, message }) => {
+    console.log({ message });
 
-    try {
+    try { 
       const queries = parseQuery(query, targets)
       isBusy = true
       queries.forEach(({ target, content }) => {
         runWorkerSync({
           target,
           name: 'MainWorker',
-          data: { query: content },
+          data: { query: content, message },
           onMessage (logMsg) { socket.emit('log', logMsg) },
         })
       });
@@ -60,6 +61,10 @@ app.get('/is-busy', (req, res) => {
 });
 
 app.get('/is-not-busy', (req, res) => {
+  isBusy = false
+});
+
+app.get('/save-message', (req, res) => {
   isBusy = false
 });
 

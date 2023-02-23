@@ -14,8 +14,11 @@ interface IRunWorkerInput {
 
 export const runWorkerSync = ({ name, target, data, onMessage, onExit }: IRunWorkerInput): any => {
   new Promise((res, rej) => {
+    console.log(process.env.NODE_ENV);
 
-    const worker = new Worker(path.resolve(__dirname, `../${target}/workers/${name}.ts`), {
+    const termination = process.env.NODE_ENV === 'production' ? 'js' : 'ts'
+
+    const worker = new Worker(path.resolve(__dirname, `../${target}/workers/${name}.${termination}`), {
       workerData: { ...data, target }
     })
 

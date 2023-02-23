@@ -5,7 +5,7 @@ import { createBot } from '../main';
 register()
 
 async function main () {
-  const { query, target } = workerData
+  const { query, target, message } = workerData
   console.log({ query, target });
 
   console.log(`${target} - MainWorker`);
@@ -14,7 +14,7 @@ async function main () {
   const bot = createBot((logMsg) => {
     parentPort?.postMessage(logMsg)
   },
-    { target }
+    { target, message }
   )
 
   bot.run(query)

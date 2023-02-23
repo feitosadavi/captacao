@@ -17,11 +17,11 @@ const main_1 = require("../../olx/main");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         console.log('WEBMOTORS - MainWorker');
-        const { query, target } = worker_threads_1.workerData;
+        const { query, target, message } = worker_threads_1.workerData;
         console.log({ query, target });
         const olxBot = (0, main_1.createBot)((logMsg) => {
             worker_threads_1.parentPort === null || worker_threads_1.parentPort === void 0 ? void 0 : worker_threads_1.parentPort.postMessage(logMsg);
-        }, { target });
+        }, { target, message });
         olxBot.run(query);
     });
 }

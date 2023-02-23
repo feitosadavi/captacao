@@ -17,7 +17,7 @@ const worker_threads_1 = require("worker_threads");
 const path_1 = __importDefault(require("path"));
 const runWorker = ({ name, target, data }) => __awaiter(void 0, void 0, void 0, function* () {
     return new Promise((resolve, rejects) => {
-        const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, `../${target}/workers/${name}.ts`), {
+        const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, `../${target}/workers/${name}.js`), {
             workerData: data
         });
         worker.on('message', resolve);
