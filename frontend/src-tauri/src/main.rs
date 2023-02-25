@@ -15,7 +15,17 @@ fn main() {
 }
 
 #[tauri::command]
-fn start() {
+fn start(handle: tauri::AppHandle) {
+  let resource_path = handle.path_resolver()
+    .resolve_resource("server.js")
+    .expect("failed to resolve resource");
+
+  println!("{}", resource_path.display());
+
+  let command = ["node ", &resource_path.display().to_string(), "/server.js"].join("");
+
+  println!("{}", command);
+
   println!("Iniciando bot");
   thread::spawn(move || {
     Command::new("sh")

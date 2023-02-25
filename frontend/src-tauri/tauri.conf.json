@@ -16,6 +16,11 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "fs": {
+        "scope": [
+          "$RESOURCE/*"
+        ]
       }
     },
     "bundle": {
@@ -25,9 +30,7 @@
       "deb": {
         "files": {
           "/usr/share/captacao/dist": "/home/eu/Documents/projects/captacao/backend/dist",
-          "/usr/share/captacao/node_modules": "/home/eu/Documents/projects/captacao/backend/node_modules",
-          "/usr/share/README.md": "../README.md",
-          "/usr/share/assets": "../assets/"
+          "/usr/share/captacao/node_modules": "/home/eu/Documents/projects/captacao/backend/node_modules"
         }
       },
       "externalBin": [],
@@ -47,7 +50,10 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
+      "resources": [
+        "/home/eu/Documents/projects/captacao/backend/dist/*",
+        "/home/eu/Documents/projects/captacao/backend/node_modules/*"
+      ],
       "shortDescription": "",
       "targets": "all",
       "windows": {
@@ -56,6 +62,7 @@
         "timestampUrl": ""
       }
     },
+    
     "security": {
       "csp": null
     },
@@ -68,7 +75,7 @@
         "resizable": true,
         "title": "Captação v1",
         "height": 600,
-        "width": 600
+        "width": 630
       }
     ]
   }

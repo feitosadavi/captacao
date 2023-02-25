@@ -1,4 +1,4 @@
-import { chromium, Page } from '@playwright/test';
+import { chromium, firefox, Page } from '@playwright/test';
 import path from 'path';
 import { TargetKeys } from '../domain/target';
 import { Auth } from '../olx/modules/Auth';
@@ -10,6 +10,7 @@ type InitBrowserOptions = {
     width?: number,
     height?: number
   }
+  // browserName: 'firefox' | 'chrome'
 }
 
 async function initBrowser (options?: InitBrowserOptions) {
@@ -17,7 +18,7 @@ async function initBrowser (options?: InitBrowserOptions) {
     try {
       const storageStatePath = path.resolve(__dirname, './storageState.json')
 
-      const browser = await chromium.launch({ headless: false })
+      const browser = await firefox.launch({ headless: true })
 
       const width = options?.viewport?.width ?? 500
       const height = options?.viewport?.height ?? 1200

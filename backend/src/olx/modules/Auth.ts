@@ -4,16 +4,18 @@ async function delay (ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-const authOptions = {
+export const authOptions = {
   'olx': {
     url: 'https://conta.olx.com.br/acesso',
     email: 'https://conta.olx.com.br/acesso',
     password: 'CV204060'
   },
   'webmotors': {
-    url: 'capitalveiculos07@gmail.com',
+    // url: 'capitalveiculos07@gmail.com',
+    // password: '40028922dD$'
     email: 'davifeitosa.trab@gmail.com',
-    password: '40028922dD$'
+    phone: '61992258925',
+    name: 'Davi Feitosa'
   }
 }
 

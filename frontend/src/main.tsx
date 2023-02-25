@@ -5,7 +5,6 @@ import { Navbar } from './components';
 
 import { styled } from './config/stitches';
 import SearchPage from './pages/search.page';
-import MessagePage from './pages/message.page';
 
 import './styles.css'
 
@@ -34,7 +33,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Navbar />
           <Routes>
             <Route path='/' element={<SearchPage />} />
-            <Route path='/message' element={<MessagePage />} />
           </Routes>
         </S.Wrapper>
       </S.Container>
