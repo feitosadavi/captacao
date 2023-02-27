@@ -13,7 +13,7 @@ function createBot(cb, { target, message }) {
         (0, runWorkerSync_1.runWorkerSync)({
             name: 'MessengerWorker',
             target,
-            data: { links, message },
+            data: { links, message, target },
             eventManager,
             onMessage: ({ type, content }) => {
                 const msg = {

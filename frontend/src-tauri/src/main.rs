@@ -16,26 +16,46 @@ fn main() {
 
 #[tauri::command]
 fn start(handle: tauri::AppHandle) {
-  let resource_path = handle.path_resolver()
-    .resolve_resource("server.js")
-    .expect("failed to resolve resource");
-
-  println!("{}", resource_path.display());
-
-  let command = ["node ", &resource_path.display().to_string(), "/server.js"].join("");
-
-  println!("{}", command);
-
-  println!("Iniciando bot");
+  if cfg!(target_os="windows") {
   thread::spawn(move || {
-    Command::new("sh")
-      .arg("-c")
-      // .arg("node /usr/share/captacao/dist/server.js")
-      .arg("node /home/eu/Documents/projects/captacao/backend/dist/server.js")
-      .spawn()
-      .expect("node command failed to start");
-          
+    let resource_path = handle.path_resolver()
+      .resolve_resource("_root_")
+      .expect("failed to resolve resource");
+
+    let path = &resource_path.display().to_string().replace(r"\\?\", "");
+
+    let server_path_with_front = path.replace(r"C:", "");
+
+    let index = server_path_with_front.find(r"\frontend").unwrap();
+
+    let server_path = [&server_path_with_front[0..index], r"\backend"].join("");
+
+    println!("{}", server_path);
+
+    let command = ["node ", &path, &server_path, r"\dist\server.js"].join("");
+
+    println!("{}", &command);
+    Command::new("cmd")
+      .args(["/C", &command])
+      .output()
+      .expect("failed to execute process");
   });
+
+  } else {
+
+    println!("Iniciando bot");
+    thread::spawn(move || {
+      Command::new("sh")
+        .arg("-c")
+        // .arg("node /usr/share/captacao/dist/server.js")
+        .arg("node /home/eu/Documents/projects/captacao/backend/dist/server.js")
+        .spawn()
+        .expect("node command failed to start");
+      });
+  }
+
+
+          
 }
 
 #[tauri::command]

@@ -11,8 +11,8 @@ async function delay(ms) {
 }
 async function main() {
     console.log('MESSENGERWORKER');
-    const { links, message } = node_worker_threads_1.workerData;
-    const messengerPage = (await (0, context_1.initBrowser)({ viewport: { height: 600 } }));
+    const { links, message, target } = node_worker_threads_1.workerData;
+    const messengerPage = (await (0, context_1.initBrowser)({ viewport: { height: 600 }, target, auth: true }));
     const messenger = new Messenger(messengerPage);
     for (const [index, link] of links.entries()) {
         try {
@@ -34,7 +34,7 @@ async function main() {
     await messengerPage.close();
     // await messenger.sendMessage(links[0])
     // parentPort?.postMessage('finish')
-    node_worker_threads_1.parentPort?.postMessage({ type: 'status', content: 'finished' });
+    // parentPort?.postMessage({ type: 'status', content: 'finished' })
 }
 main();
 class Messenger {
@@ -54,7 +54,7 @@ class Messenger {
             if (!hasSentPreviousMessages) {
                 await this.typeMessage();
                 const element = await this.page?.$('[aria-label="Enviar mensagem"]');
-                // await element?.click()
+                await element?.click();
                 console.log('MENSAGEM ENVIADA!');
             }
         }

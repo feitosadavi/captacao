@@ -8,6 +8,6 @@ export type TargetOptions = {
   selected: boolean
 }
 
-export type TargetKeys = 'olx' | 'webmotors'
+export type TargetKeys = 'olx'
 
 export type Target = Record<TargetKeys, TargetOptions>

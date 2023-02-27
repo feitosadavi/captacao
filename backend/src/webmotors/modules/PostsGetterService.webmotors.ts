@@ -40,22 +40,22 @@ type Res = {
   links: PostUrl[]
 }
 
-import puppeteer from 'puppeteer-extra'
+// import puppeteer from 'puppeteer-extra'
 
-// add stealth plugin and use defaults (all evasion techniques)
-import StealthPlugin from 'puppeteer-extra-plugin-stealth'
-puppeteer.use(StealthPlugin())
+// // add stealth plugin and use defaults (all evasion techniques)
+// import StealthPlugin from 'puppeteer-extra-plugin-stealth'
+// puppeteer.use(StealthPlugin())
 
 export class PostsGetterService {
 
   async start (queryUrl: string): Promise<any> {
-    puppeteer.launch({ headless: true }).then(async browser => {
-      console.log('Running tests..')
-      const page = await browser.newPage()
-      const URL = `${WEBMOTORS_API_BASE_PATH}${queryUrl}`
-      const response = await page.goto(URL)
-      const res = await response?.text()
-      console.log({ res });
+    // puppeteer.launch({ headless: true }).then(async browser => {
+      // console.log('Running tests..')
+      // const page = await browser.newPage()
+      // const URL = `${WEBMOTORS_API_BASE_PATH}${queryUrl}`
+      // const response = await page.goto(URL)
+      // const res = await response?.text()
+      // console.log({ res });
 
       // await page.setRequestInterception(true);
 
@@ -73,7 +73,7 @@ export class PostsGetterService {
       // await page.screenshot({ path: 'testresult.png', fullPage: true })
       // await browser.close()
       // console.log(`All done, check the screenshot. ✨`)
-    })
+    // })
 
     // try {
     //   const links: PostUrl[] = []

@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": false
@@ -27,12 +27,6 @@
       "active": true,
       "category": "DeveloperTool",
       "copyright": "",
-      "deb": {
-        "files": {
-          "/usr/share/captacao/dist": "/home/eu/Documents/projects/captacao/backend/dist",
-          "/usr/share/captacao/node_modules": "/home/eu/Documents/projects/captacao/backend/node_modules"
-        }
-      },
       "externalBin": [],
       "icon": [
         "icons/32x32.png",
@@ -51,15 +45,18 @@
         "signingIdentity": null
       },
       "resources": [
-        "/home/eu/Documents/projects/captacao/backend/dist/*",
-        "/home/eu/Documents/projects/captacao/backend/node_modules/*"
+        "C:/Users/Davi/Documents/captacao/backend/dist/*",
+        "C:/Users/Davi/Documents/captacao/backend/node_modules/*"
       ],
       "shortDescription": "",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "downloadBootstrapper"
+        }
       }
     },
     
@@ -72,7 +69,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "resizable": true,
+        "resizable": false,
         "title": "Captação v1",
         "height": 600,
         "width": 630

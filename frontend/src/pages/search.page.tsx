@@ -4,13 +4,11 @@ import { Socket } from 'socket.io';
 import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 
 import { invoke } from "@tauri-apps/api/tauri";
-import { appWindow } from '@tauri-apps/api/window'
 
 import { runWebWorkerSync } from '../workers/runWebWorkerSync';
 import { ProgressBar, Log, BotStatusManager, Modal } from '../components'
 import * as S from './search.styles'
 import { ConsoleMessage, Progress, TargetKeys, TargetOptions } from '../types';
-import { useNavigate } from 'react-router-dom';
 
 type LogMessageType = any
 type ProgressMessageType = any
@@ -23,10 +21,6 @@ const initialTargets: NewTarget[] = [{
   name: 'olx',
   progress: { current: 0, total: 0 },
   selected: true
-}, {
-  name: 'webmotors',
-  progress: { current: 0, total: 0 },
-  selected: false
 }]
 
 type Action = {
@@ -73,7 +67,7 @@ type FilterInput = {
 
 export default function () {
   const [socket, setSocket] = React.useState<Socket<DefaultEventsMap, DefaultEventsMap>>()
-  const [searchParams, setSearchParams] = React.useState<SearchParams>({ brand: 'Fiat', model: 'Uno', state: 'DF', message: '' })
+  const [searchParams, setSearchParams] = React.useState<SearchParams>({ brand: '', model: '', state: '', message: '' })
   const [logMessages, setLogMessages] = React.useState<ConsoleMessage[]>([])
   const [error, setError] = React.useState<string>('')
   const [botStatus, setBotStatus] = React.useState<BotStatus>('offline')
@@ -82,26 +76,28 @@ export default function () {
 
   const connectSocket = () => new Promise((resolve, rejects) => {
     try {
-      if (botStatus !== 'offline') {
+      // if (botStatus !== 'offline') {
         const _socket = io('http://localhost:5000')
         setSocket(_socket as any)
-      } else {
-        rejects(new Error('O bot está offline, clique em "Iniciar" e tente novamente!'))
-      }
+        resolve(null)
+      // } else {
+      //   rejects(new Error('O bot está offline, clique em "Iniciar" e tente novamente!'))
+      // }
     } catch (error) {
       console.error(error);
       rejects(new Error('Erro ao conectar-se com o servidor'))
     }
   })
 
-
+  const [loops, setLoops] = React.useState(0)
   const isFirstMount = React.useRef<boolean>(true)
   React.useEffect(() => {
     if (isFirstMount.current) {
       runWebWorkerSync({
         name: 'BotStatusCheckerWorker',
         onMessage (logMsg) {
-          setBotStatus(logMsg)
+          // setBotStatus(logMsg)
+          setLoops(prevState => prevState++)
         }
       })
       isFirstMount.current = false
@@ -138,11 +134,13 @@ export default function () {
 
   async function handleStart () {
     await invoke("start");
+    setBotStatus('online');
   }
 
   async function handleStop () {
     socket?.disconnect()
     fetch('http://localhost:5000/stop')
+    setBotStatus('offline');
   }
 
   async function handlePowerSwitch () {

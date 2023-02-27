@@ -7,8 +7,8 @@ async function delay (ms: number) {
 export const authOptions = {
   'olx': {
     url: 'https://conta.olx.com.br/acesso',
-    email: 'https://conta.olx.com.br/acesso',
-    password: 'CV204060'
+    email: 'powerfulveiculosdf@gmail.com',
+    password: 'Power-1414'
   },
   'webmotors': {
     // url: 'capitalveiculos07@gmail.com',

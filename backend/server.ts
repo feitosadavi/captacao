@@ -19,6 +19,14 @@ export const io = new Server(httpServer, {
 let isBusy = false
 
 io.on('connection', (socket) => {
+  socket.emit('log', {
+    type: 'stack',
+    target: 'olx',
+    content: {
+      type: 'info',
+      description: 'Online',
+    }
+  })
   socket.on('search', async ({ query, targets, message }) => {
     console.log({ message });
 

@@ -18,7 +18,7 @@ async function initBrowser(options) {
             const page = await ctx.newPage();
             if (options?.auth) {
                 const auth = new Auth_1.Auth(page);
-                await auth.authenticateWithEmailAndPassword();
+                await auth.authenticateWithEmailAndPassword(options.target);
                 // Save signed-in state to 'storageState.json'.
                 await page.context().storageState({ path: storageStatePath });
             }

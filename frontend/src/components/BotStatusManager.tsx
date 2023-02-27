@@ -1,17 +1,20 @@
 import { BsPower } from 'react-icons/bs'
 import { BotStatus } from '../pages/search.page'
 import { styled } from '../config/stitches'
+import { Button } from './Button'
 
 interface BotStatusManagerProps {
   botStatus: BotStatus
   handlePowerSwitch: () => void
   SearchModal: JSX.Element
+  handleStart?: () => void
 }
 
 export const BotStatusManager: React.FC<BotStatusManagerProps> = ({
   botStatus,
   handlePowerSwitch,
-  SearchModal
+  SearchModal,
+  handleStart
 }) => {
   return (
     <S.Wrapper>
@@ -26,9 +29,12 @@ export const BotStatusManager: React.FC<BotStatusManagerProps> = ({
           {botStatus === 'busy' ? 'pesquisando' : botStatus}
         </S.Status>
 
-        <S.PowerButton onClick={handlePowerSwitch} status={botStatus}>
+         <S.PowerButton onClick={handlePowerSwitch} status={botStatus}>
           <BsPower />
         </S.PowerButton>
+
+        {/* <Button label="Parar" onClick={handlePowerSwitch} />
+        <Button label="Parar" onClick={handleStart} /> */}
       </S.BotManager>
 
     </S.Wrapper>

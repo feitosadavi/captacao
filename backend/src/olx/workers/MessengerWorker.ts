@@ -20,7 +20,7 @@ async function main () {
 
   const { links, message, target } = workerData
 
-  const messengerPage = (await initBrowser({ viewport: { height: 600 }, target }))
+  const messengerPage = (await initBrowser({ viewport: { height: 600 }, target, auth: true }))
   const messenger = new Messenger(messengerPage)
   for (const [index, link] of links.entries()) {
     try {
@@ -43,7 +43,7 @@ async function main () {
 
   // await messenger.sendMessage(links[0])
   // parentPort?.postMessage('finish')
-  parentPort?.postMessage({ type: 'status', content: 'finished' })
+  // parentPort?.postMessage({ type: 'status', content: 'finished' })
 
 }
 
@@ -70,7 +70,7 @@ class Messenger {
         await this.typeMessage()
         const element = await this.page?.$('[aria-label="Enviar mensagem"]')
 
-        // await element?.click()
+        await element?.click()
         console.log('MENSAGEM ENVIADA!');
       }
     }
